@@ -430,8 +430,8 @@
 		else if (currentScroll > (test()*a) && currentScroll < (test()*b)) {
 			console.log("ed");
 			$('.info-section h3').eq(0).addClass("entry-right");			
-			$('.sidebar').eq(0).addClass("sidebar-active");
-			$('.sidebar:not(:nth-child(1))').removeClass("sidebar-active");
+			$('.sidebar a').eq(0).addClass("sidebar-active");
+			$('.sidebar a:not(:nth-child(1))').removeClass("sidebar-active");
 			$('.nav-item').eq(0).addClass("nav-active");
 			$('.nav-item:not(:nth-child(1))').removeClass("nav-active");
 			
@@ -440,8 +440,8 @@
 		else if (currentScroll > (test()*b) && currentScroll < (test()*c)) {
 			console.log("work");
 			$('.info-section h3').eq(1).addClass("entry-right");
-			$('.sidebar li').eq(1).addClass("sidebar-active");
-			$('.sidebar li:not(:nth-child(2))').removeClass("sidebar-active");
+			$('.sidebar a').eq(1).addClass("sidebar-active");
+			$('.sidebar a:not(:nth-child(2))').removeClass("sidebar-active");
 			$('.nav-item').eq(1).addClass("nav-active");
 			$('.nav-item:not(:nth-child(2))').removeClass("nav-active");
 			$('.skillbar .skillbar-bar').css({"width":"0%", "transition":".1s linear"});
@@ -450,8 +450,8 @@
 			console.log("sk");
 			$('.info-section h3').eq(2).addClass("entry-right");
 			
-			$('.sidebar li').eq(2).addClass("sidebar-active");
-			$('.sidebar li:not(:nth-child(3))').removeClass("sidebar-active");
+			$('.sidebar a').eq(2).addClass("sidebar-active");
+			$('.sidebar a:not(:nth-child(3))').removeClass("sidebar-active");
 			$('.nav-item').eq(2).addClass("nav-active");
 			$('.nav-item:not(:nth-child(3))').removeClass("nav-active");
 			$('.skillbar .skillbar-bar').css({"width":"80%", "transition":"1s ease-in"});
@@ -460,8 +460,8 @@
 			console.log("port");
 			$('.info-section h3').eq(3).addClass("entry-right");
 			
-			$('.sidebar li').eq(3).addClass("sidebar-active");
-			$('.sidebar li:not(:nth-child(4))').removeClass("sidebar-active");
+			$('.sidebar a').eq(3).addClass("sidebar-active");
+			$('.sidebar a:not(:nth-child(4))').removeClass("sidebar-active");
 			$('.nav-item').eq(3).addClass("nav-active");
 			$('.nav-item:not(:nth-child(4))').removeClass("nav-active");
 			$('.skillbar .skillbar-bar').css({"width":"0%", "transition":".1s linear"});
