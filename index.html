@@ -22,16 +22,32 @@
 			<h1 class="display-4">Hello World!</h1>
 	    	<p class="lead">Web Developer / Web Designer</p>
 	   	</div>
-
-		
-	    <nav class="navbar justify-content-center sticky-top" style="background-color: #F2B103">
-		    <div class="navbar-nav">
-		        <a href="#" class="nav-item nav-link" id="nav-education"><i class="fas fa-3x fa-graduation-cap"></i><br><p>Education</p></a>
-		        <a href="#" class="nav-item nav-link" id="nav-experience"><i class="fas fa-3x fa-briefcase"></i><br><p>Experience</p></a>
-		        <a href="#" class="nav-item nav-link" id="nav-skills" ><i class="fas fa-3x fa-chart-bar"></i><br><p>Skills</p></a>
-		        <a href="#" class="nav-item nav-link" id="nav-portfolio"><i class="fas fa-3x fa-paint-brush"></i><br><p>Portfolio</p></a>
+	   	
+	    <div class="container" id="bubbles">
+			<div class="row bubble-container">
+				<div class="" id="education-bubble">
+					<a href="#" class="nav-item nav-link" id="nav-education"><i class="fas fa-3x fa-graduation-cap"></i></a>
+			    </div>
+			    <div class="" id="exp-bubble">
+					<a href="#" class="nav-item nav-link" id="nav-exp"><i class="fas fa-3x fa-graduation-cap"></i></a>
+			    </div>
+			    <div class="" id="skills-bubble">
+					<a href="#" class="nav-item nav-link" id="nav-skills"><i class="fas fa-3x fa-graduation-cap"></i></a>
+			    </div>
+			    <div class="" id="work-bubble">
+					<a href="#" class="nav-item nav-link" id="nav-work"><i class="fas fa-3x fa-graduation-cap"></i></a>
+			    </div>
+			</div>
+	    </div>
+	    
+  		<div class="navbars">
+		    <ul class="sidebar">
+		       <a><li href="#" class="nav-link" id="nav-education"><i class="fas fa-lg fa-graduation-cap"></i></li></a>
+		       <a><li href="#" class="nav-link" id="nav-experience"><i class="fas fa-lg fa-briefcase"></i></li></a>
+		       <a><li href="#" class="nav-link" id="nav-skills" ><i class="fas fa-lg fa-chart-bar"></i></li></a>
+		       <a><li href="#" class="nav-link" id="nav-portfolio"><i class="fas fa-lg fa-paint-brush"></i></li></a>
 		    </div>
-	    </nav>
+	    </div> 
 	    
 	    	   	
 	   	<div class="scroll-up">
@@ -240,6 +256,13 @@
  
 <script type="text/javascript">
 
+	var testing = function() {
+		var w1 = $("#bubbles").width();
+		var w2 = $(".bubble-container").outerWidth();
+		console.log("w:"+w1);
+		console.log("inner:"+w2);
+		$(".bubble-container").css({"margin-left": (w1-w2)/2});
+	}
 
 	var getDocumentHeight = function() {
 		return ($(document).height());
@@ -248,6 +271,7 @@
 		return ($(window).height());
 	}
 	var setSectionHeight = function() {
+		var width = $(window).width();
 	    if(width > 768){
 		    $(".info-section").css({"height": "100vh"});
 	    }
@@ -257,9 +281,18 @@
 	    }
 	}
 	
+	var test = function() {
+		return (getDocumentHeight()/5);
+	}
+	
+	$(document).ready(testing);
+	$(window).resize(testing);
+	
 	$(document).ready(setSectionHeight);
 	$(window).resize(setSectionHeight);
 	
+	$(document).ready(test);
+	$(window).resize(test);
 
 	$(document).ready(getDocumentHeight);
 	$(window).resize(getDocumentHeight);
@@ -273,7 +306,7 @@
 
 	    if(width < 460 && height < 560){
 		    $(".jumbotron").css({"height": (height*0.85) + 'px'});
-		    $(".navbar").css({"height": (height*0.15) + 'px'});
+		    $(".navbars").css({"height": (height*0.15) + 'px'});
 		    $('.jumbotron img').css("max-width", "200px");
 		    $(".navbar-nav").addClass("nav-small");
 		    $('.navbar-nav p').hide();
@@ -281,7 +314,7 @@
 	    }
     	else if((width > 460 && width < 660) && (height > 560 && height < 760)){
 		    $(".jumbotron").css({"height": (height*0.87) + 'px'});
-		    $(".navbar").css({"height": (height*0.13) + 'px'});
+		    $(".navbars").css({"height": (height*0.13) + 'px'});
 		    $('.jumbotron img').css("max-width", "200px");
 		    $(".navbar-nav").addClass("nav-small");
 		    $('.navbar-nav p').hide();
@@ -289,14 +322,14 @@
 	    }
 	    else if(width > 660 && height > 760){
 		    $(".jumbotron").css({"height": (height*0.88) + 'px'});
-		    $(".navbar").css({"height": (height*0.12) + 'px'});
+		    $(".navbars").css({"height": (height*0.12) + 'px'});
 	    	$('.jumbotron img').css("max-width", "300px");
 	    	$('.navbar-nav p').show();
 	    	$('.scroll-up').css("left", "90%");
 	    }
 	    else{
 		    $(".jumbotron").css({"height": (height*0.89) + 'px'});
-		    $(".navbar").css({"height": (height*0.11) + 'px'});
+		    $(".navbars").css({"height": (height*0.11) + 'px'});
 		    $('.jumbotron img').css("max-width", "200px");
 		    $(".navbar-nav").addClass("nav-small");
 		    $('.navbar-nav p').hide();
@@ -396,14 +429,19 @@
 		} 
 		else if (currentScroll > (test()*a) && currentScroll < (test()*b)) {
 			console.log("ed");
-			$('.info-section h3').eq(0).addClass("entry-right");
+			$('.info-section h3').eq(0).addClass("entry-right");			
+			$('.sidebar').eq(0).addClass("sidebar-active");
+			$('.sidebar:not(:nth-child(1))').removeClass("sidebar-active");
 			$('.nav-item').eq(0).addClass("nav-active");
 			$('.nav-item:not(:nth-child(1))').removeClass("nav-active");
+			
 			$('.skillbar .skillbar-bar').css({"width":"0%", "transition":".1s linear"});
 		} 
 		else if (currentScroll > (test()*b) && currentScroll < (test()*c)) {
 			console.log("work");
 			$('.info-section h3').eq(1).addClass("entry-right");
+			$('.sidebar li').eq(1).addClass("sidebar-active");
+			$('.sidebar li:not(:nth-child(2))').removeClass("sidebar-active");
 			$('.nav-item').eq(1).addClass("nav-active");
 			$('.nav-item:not(:nth-child(2))').removeClass("nav-active");
 			$('.skillbar .skillbar-bar').css({"width":"0%", "transition":".1s linear"});
@@ -411,6 +449,9 @@
 		else if (currentScroll > (test()*c) && currentScroll < (test()*d)) {
 			console.log("sk");
 			$('.info-section h3').eq(2).addClass("entry-right");
+			
+			$('.sidebar li').eq(2).addClass("sidebar-active");
+			$('.sidebar li:not(:nth-child(3))').removeClass("sidebar-active");
 			$('.nav-item').eq(2).addClass("nav-active");
 			$('.nav-item:not(:nth-child(3))').removeClass("nav-active");
 			$('.skillbar .skillbar-bar').css({"width":"80%", "transition":"1s ease-in"});
@@ -418,6 +459,9 @@
 		else if (currentScroll > (test()*d)) {
 			console.log("port");
 			$('.info-section h3').eq(3).addClass("entry-right");
+			
+			$('.sidebar li').eq(3).addClass("sidebar-active");
+			$('.sidebar li:not(:nth-child(4))').removeClass("sidebar-active");
 			$('.nav-item').eq(3).addClass("nav-active");
 			$('.nav-item:not(:nth-child(4))').removeClass("nav-active");
 			$('.skillbar .skillbar-bar').css({"width":"0%", "transition":".1s linear"});
@@ -435,7 +479,7 @@
 		    }		    
 		});
 	});
-
+	
 	$(document).ready(function(){
 		$('.nav-item').eq(1).click(() => {
 			var width = $(window).width();
@@ -478,12 +522,55 @@
 	    }
 	    else if(width > 560){
 	    	$('html, body').animate({scrollTop: $('.info-section').eq(3).offset().top -100}, 500);
-	    }
-		
+	    }		
 	});
 	
-	$('.nav-item').on('click', function(){
-	    $('.navbar-collapse').collapse('hide');
+	$(document).ready(function(){
+		$('.sidebar li').eq(0).click(() => {
+			var width = $(window).width();
+		    if(width < 560){
+		    	$('html, body').animate({scrollTop: $('.info-section').eq(0).offset().top -75}, 500);
+		    }
+		    else if(width > 560){
+		    	$('html, body').animate({scrollTop: $('.info-section').eq(0).offset().top -100}, 500);
+		    }		    
+		});
+	});
+	
+	$(document).ready(function(){
+		$('.sidebar li').eq(1).click(() => {
+			var width = $(window).width();
+		    if(width < 560){
+		    	$('html, body').animate({scrollTop: $('.info-section').eq(1).offset().top -75}, 500);
+		    }
+		    else if(width > 560){
+		    	$('html, body').animate({scrollTop: $('.info-section').eq(1).offset().top -100}, 500);
+		    }		    
+		});
+	});
+	
+	$(document).ready(function(){
+		$('.sidebar li').eq(2).click(() => {
+			var width = $(window).width();
+		    if(width < 560){
+		    	$('html, body').animate({scrollTop: $('.info-section').eq(2).offset().top -75}, 500);
+		    }
+		    else if(width > 560){
+		    	$('html, body').animate({scrollTop: $('.info-section').eq(2).offset().top -100}, 500);
+		    }		    
+		});
+	});
+	
+	$(document).ready(function(){
+		$('.sidebar li').eq(3).click(() => {
+			var width = $(window).width();
+		    if(width < 560){
+		    	$('html, body').animate({scrollTop: $('.info-section').eq(3).offset().top -75}, 500);
+		    }
+		    else if(width > 560){
+		    	$('html, body').animate({scrollTop: $('.info-section').eq(3).offset().top -100}, 500);
+		    }		    
+		});
 	});
 </script>
 </body>
