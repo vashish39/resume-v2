@@ -427,7 +427,6 @@ table {
     font-weight: bold;
     font-size: 13px;
     text-align: left;
-    @import url('file:///C:\Users\Ashish\Desktop\parallax-scrolling-demo\css\main.css');
 }
 
 .skillbar-title span {
@@ -503,4 +502,33 @@ table {
     opacity: 1;
     transform: translateX(0);
   }
+}
+
+#education .row {
+    background-color: lightgrey;
+}
+
+.year h3{
+    font-size: 1.7em;
+    font-weight: bold;
+}
+
+.insti h4 {
+    font-size: 1.7em;
+    font-weight: bold;
+}
+
+.insti h5 {
+    font-size: 1.5em;
+}
+
+.cgpa h5 {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+#education h3, #education h4, #education h5 {
+    font-family: 'Roboto Slab', serif;
+    text-align: left;
+    position: relative;
 }

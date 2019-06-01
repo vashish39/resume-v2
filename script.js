@@ -323,10 +323,6 @@
 		});
     });
 
-$(window).bind('scroll', function (e) {
-    parallaxScroll();
-});
-
 function parallaxScroll1() {
     var scrolled = $(window).scrollTop() - test();
     console.log(scrolled);
@@ -349,3 +345,61 @@ function parallaxScroll4() {
     console.log(scrolled);
     $('.info-section h1').eq(3).css({ "top": (0 - (scrolled * 1)) + 'px',  "opacity": "1" });
 }
+/*
+queue(function () {
+    return $(".year h3").animate({ "left": "15px", "opacity": "1" }, "fast");
+}, function () {
+        return $(".year h3").animate({ "left": "15px", "opacity": "1" }, "fast");
+}, function () {
+        return $(".insti h4").animate({ "left": "15px", "opacity": "1" }, "fast");
+}, function () {
+        return $(".insti h5").animate({ "left": "15px", "opacity": "1" }, "fast");
+}, function () {
+        return $(".cgpa h5").animate({ "left": "15px", "opacity": "1"}, "fast");
+});
+
+function queue(start) {
+    var rest = [].splice.call(arguments, 1),
+        promise = $.Deferred();
+
+    if (start) {
+        $.when(start()).then(function () {
+            queue.apply(window, rest);
+        });
+    } else {
+        promise.resolve();
+    }
+    return promise;
+}
+*/
+/*$(document).ready(function () {
+    $('.fades').each(function (fadeInDiv) {
+        $(this).delay(fadeInDiv * 1000).fadeIn(1000);
+    });
+});*/
+/*
+$(document).ready(function () {
+    var $word1 = $('.year h3'),
+        $word2 = $('.insti h4'),
+        $word3 = $('.insti h5');
+        $word4 = $('.cgpa h5');
+
+    $word1.delay(500).fadeIn(1000, function () {
+        $word2.fadeIn(1000, function () {
+            $word3.fadeIn(1000, function () {
+                $word4.fadeIn(1000);
+            });
+        });
+    });
+});*/
+
+function f(baseID, n, t) {
+    var jq = $("#" + baseID + n);
+    console.log(jq[0]);
+    if (jq.length) {
+        jq.hide().fadeIn(t).promise().done(function () {
+            f(baseID, n + 1, t);
+        });
+    }
+};
+f('fades', 1, 1000);
