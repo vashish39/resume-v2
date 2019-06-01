@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <title>CSS Template</title>
@@ -20,37 +20,43 @@
 <body>
 
 <div class="container-fluid">	
-		<div class="jumbotron">
-			<img class="profile img-responsive" src="img.jpg" alt="..."></img>
-			<h1 class="display-4">Hello World!</h1>
-	    	<p class="lead">Web Developer / Web Designer</p>
-	   	</div>
+    <div class="jumbotron">
+        <h1 class="title">Hello World!</h1>
+        <h2 class="lead">Web Developer / Web Designer</h2>
+        <div class="container bubble-container">
+            <div class="row ">
+                <div id="bubbles">
+                    <div class="" id="education-bubble">
+                        <a href="#" class="nav-item nav-link" id="nav-education"><i class="fas fa-3x fa-graduation-cap"></i></a>
+                        <p>Education</p>
+                    </div>
+                    <div class="" id="exp-bubble">
+                        <a href="#" class="nav-item nav-link" id="nav-exp"><i class="fas fa-3x fa-graduation-cap"></i></a>
+                        <p>Experience</p>
+                    </div>
+                    <div class="" id="skills-bubble">
+                        <a href="#" class="nav-item nav-link" id="nav-skills"><i class="fas fa-3x fa-graduation-cap"></i></a>
+                        <p>Skills</p>
+                    </div>
+                    <div class="" id="work-bubble">
+                        <a href="#" class="nav-item nav-link" id="nav-work"><i class="fas fa-3x fa-graduation-cap"></i></a>
+                        <p>Portfolio</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 	   	
-	    <div class="container">
-			<div class="row bubble-container"  id="bubbles">
-				<div class="" id="education-bubble" style="background-color: #D2E3FC;">
-					<a href="#" class="nav-item nav-link" id="nav-education"><i class="fas fa-3x fa-graduation-cap"></i></a>
-			    </div>
-			    <div class="" id="exp-bubble" style="background-color: #CEEAD6;">
-					<a href="#" class="nav-item nav-link" id="nav-exp"><i class="fas fa-3x fa-graduation-cap"></i></a>
-			    </div>
-			    <div class="" id="skills-bubble" style="background-color: #FFEFC3;">
-					<a href="#" class="nav-item nav-link" id="nav-skills"><i class="fas fa-3x fa-graduation-cap"></i></a>
-			    </div>
-			    <div class="" id="work-bubble" style="background-color: #F8D2CE;">
-					<a href="#" class="nav-item nav-link" id="nav-work"><i class="fas fa-3x fa-graduation-cap"></i></a>
-			    </div>
-			</div>
-	    </div>
 	    
-  		<div class="navbars">
-		    <ul class="sidebar">
-		       <a><li href="#" class="nav-link" id="nav-education"><i class="fas fa-lg fa-graduation-cap"></i></li></a>
-		       <a><li href="#" class="nav-link" id="nav-experience"><i class="fas fa-lg fa-briefcase"></i></li></a>
-		       <a><li href="#" class="nav-link" id="nav-skills" ><i class="fas fa-lg fa-chart-bar"></i></li></a>
-		       <a><li href="#" class="nav-link" id="nav-portfolio"><i class="fas fa-lg fa-paint-brush"></i></li></a>
-		    </div>
-	    </div> 
+	    
+
+		<div class="sidebar">
+		    <a href="#" id="nav-education"><i class="fas fa-lg fa-graduation-cap"></i></a>
+		    <a href="#" id="nav-experience"><i class="fas fa-lg fa-briefcase"></i></a>
+		    <a href="#" id="nav-skills" ><i class="fas fa-lg fa-chart-bar"></i></a>
+		    <a href="#" id="nav-portfolio"><i class="fas fa-lg fa-paint-brush"></i></a>
+		</div>
+
 	    
 	    	   	
 	   	<div class="scroll-up">
@@ -60,201 +66,157 @@
 			</span>
 		</div>
 	    
-	<div class="info" id="content">
-	
-	    <div class="info-section table-responsive" id="education">
-		    <h3>HEADER</h3>
-		    <hr class="divider">
-		    <table class="table table-hover">
-			  <thead>
-			    <tr>
-			      <th scope="col">Degree</th>
-			      <th scope="col">Institute</th>
-			      <th scope="col">Year</th>
-			      <th scope="col">CGPA/Marks</th>
-			    </tr>
-			  </thead>
-			  <tbody>
-			    <tr>
-			      <th scope="row">1</th>
-			      <td>Mark</td>
-			      <td>Otto</td>
-			      <td>@mdo</td>
-			    </tr>
-			    <tr>
-			      <th scope="row">2</th>
-			      <td>Jacob</td>
-			      <td>Thornton</td>
-			      <td>@fat</td>
-			    </tr>
-			    <tr>
-			      <th scope="row">3</th>
-			      <td>Larry the Bird</td>
-			      <td>@twitter</td>
-			      <td>@fat</td>
-			    </tr>
-			  </tbody>
-			</table>
-	    </div>
+	<div class="info" id="content">	
+        <div class="info-section table-responsive" id="education">
+            <table class="table table-hover"  style="position: absolute;">
+                <thead>
+                    <tr>
+                        <th scope="col">Degree</th>
+                        <th scope="col">Institute</th>
+                        <th scope="col">Year</th>
+                        <th scope="col">CGPA/Marks</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>Larry the Bird</td>
+                        <td>@twitter</td>
+                        <td>@fat</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h1 style="color: #659cf6">EDUCATION</h1>
+        </div>
 	    
-	    <div class="info-section" id="experience">
-		    <h3>HEADER</h3>
-		    <hr class="divider">
-		    <div class="exp-section">
-			    <div class="container" id="itiviti">
-				    <div class="row">
-					    <div class="col-md-4" id="itiviti-head">
-					    	<h4>Itiviti</h4>
-					    	<h5>Present</h5>
-					    </div>
-					    <div class="col-md-8" id="itiviti-info">
-					    	<h4>What to do</h4>
-					    	<ul>
-						    	<li> As Manager of the Gift Department at Racy</li>
-						    	<li> The Modern Woman was recognized in the Downtown Area's "Best Shopping Experience" magazine four times.</li>
-						    	<li> I would appreciate the opportunity to meet with you to discuss</li>
-					    	</ul>
-					    </div>
-				    </div>
-			    </div>
-			    
-			    <div class="container" id="zunroof">
-				    <div class="row">
-					    <div class="col-md-4" id="zunroof-head">
-					    	<h4>Zunroof</h4>
-					    	<h5>Present</h5>
-					    </div>
-					    <div class="col-md-8" id="zunroof-info">
-					    <h4>What to do</h4>
-					    	<ul>
-						    	<li> As Manager of the Gift Department at Racy</li>
-						    	<li> The Modern Woman was recognized in the Downtown Area's "Best Shopping Experience" magazine four times.</li>
-						    	<li> I would appreciate the opportunity to meet with you to discuss</li>
-					    	</ul>
-					    </div>
-				    </div>
-			    </div>
-			    			    			    
-			    <div class="container" id="mere">
-				    <div class="row">
-					    <div class="col-md-4" id="mere-head">
-					    	<h4>MereExams</h4>
-					    	<h5>Present</h5>
-					    </div>
-					    <div class="col-md-8" id="mere-info">
-					    <h4>What to do</h4>
-					    	<ul>
-						    	<li> As Manager of the Gift Department at Racy</li>
-						    	<li> The Modern Woman was recognized in the Downtown Area's "Best Shopping Experience" magazine four times.</li>
-						    	<li> I would appreciate the opportunity to meet with you to discuss</li>
-					    	</ul>
-					    </div>
-				    </div>
-			    </div>
-		    </div>
-	    </div>
+        <div class="info-section" id="experience">
+            <div class="exp-section" style="position: absolute;">
+                <div class="container" id="itiviti">
+                    <div class="row">
+                        <div class="col-md-4" id="itiviti-head">
+                            <h4>Itiviti</h4>
+                            <h5>Present</h5>
+                        </div>
+                        <div class="col-md-8" id="itiviti-info">
+                            <h4>What to do</h4>
+                            <ul>
+                                <li> As Manager of the Gift Department at Racy</li>
+                                <li> The Modern Woman was recognized in the Downtown Area's "Best Shopping Experience" magazine four times.</li>
+                                <li> I would appreciate the opportunity to meet with you to discuss</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container" id="zunroof">
+                    <div class="row">
+                        <div class="col-md-4" id="zunroof-head">
+                            <h4>Zunroof</h4>
+                            <h5>Present</h5>
+                        </div>
+                        <div class="col-md-8" id="zunroof-info">
+                            <h4>What to do</h4>
+                            <ul>
+                                <li> As Manager of the Gift Department at Racy</li>
+                                <li> The Modern Woman was recognized in the Downtown Area's "Best Shopping Experience" magazine four times.</li>
+                                <li> I would appreciate the opportunity to meet with you to discuss</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container" id="mere">
+                    <div class="row">
+                        <div class="col-md-4" id="mere-head">
+                            <h4>MereExams</h4>
+                            <h5>Present</h5>
+                        </div>
+                        <div class="col-md-8" id="mere-info">
+                            <h4>What to do</h4>
+                            <ul>
+                                <li> As Manager of the Gift Department at Racy</li>
+                                <li> The Modern Woman was recognized in the Downtown Area's "Best Shopping Experience" magazine four times.</li>
+                                <li> I would appreciate the opportunity to meet with you to discuss</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h1  style="color: #5bb873">EXPERIENCE</h1>
+        </div>
 	    
-	    <div class="info-section" id="skills">
-	    	<h3>SKILLS</h3>
-		    <hr class="divider">
-		    <div class="container">
-			    <div class="row">
-				    <div class="col-md-6">
-				        <div class="skillbar" data-percent="100%">
-							<div class="skillbar-title"><span>HTML5</span></div>
-							<div class="bar2"></div>
-							<div class="skillbar-bar"></div>
-						</div>
-						
-				        <div class="skillbar" data-percent="80%">
-							<div class="skillbar-title"><span>HTML5</span></div>
-							<div class="bar2"></div>
-							<div class="skillbar-bar"></div>
-						</div>
-									
-				        <div class="skillbar" data-percent="80%">
-							<div class="skillbar-title"><span>HTML5</span></div>
-							<div class="bar2"></div>
-							<div class="skillbar-bar"></div>
-						</div>
-						<div class="skillbar" data-percent="80%">
-							<div class="skillbar-title"><span>HTML5</span></div>
-							<div class="bar2"></div>
-							<div class="skillbar-bar"></div>
-						</div>
-						
-						<div class="skillbar" data-percent="80%">
-							<div class="skillbar-title"><span>HTML5</span></div>
-							<div class="bar2"></div>
-							<div class="skillbar-bar"></div>
-						</div>
-						
-						<div class="skillbar" data-percent="80%">
-							<div class="skillbar-title"><span>HTML5</span></div>
-							<div class="bar2"></div>
-							<div class="skillbar-bar"></div>
-						</div>
-					</div>
-					
-					<div class="col-md-6">
-				        <div class="skillbar" data-percent="100%">
-							<div class="skillbar-title"><span>HTML5</span></div>
-							<div class="bar2"></div>
-							<div class="skillbar-bar"></div>
-						</div>
-						
-				        <div class="skillbar" data-percent="80%">
-							<div class="skillbar-title"><span>HTML5</span></div>
-							<div class="bar2"></div>
-							<div class="skillbar-bar"></div>
-						</div>
-									
-				        <div class="skillbar" data-percent="80%">
-							<div class="skillbar-title"><span>HTML5</span></div>
-							<div class="bar2"></div>
-							<div class="skillbar-bar"></div>
-						</div>
-						
-						<div class="skillbar" data-percent="80%">
-							<div class="skillbar-title"><span>HTML5</span></div>
-							<div class="bar2"></div>
-							<div class="skillbar-bar"></div>
-						</div>
-						
-						<div class="skillbar" data-percent="80%">
-							<div class="skillbar-title"><span>HTML5</span></div>
-							<div class="bar2"></div>
-							<div class="skillbar-bar"></div>
-						</div>
-						<div class="skillbar" data-percent="80%">
-							<div class="skillbar-title"><span>HTML5</span></div>
-							<div class="bar2"></div>
-							<div class="skillbar-bar"></div>
-						</div>
-					</div>
-				</div>
-				
-				
-			</div>
-	    </div>
+        <div class="info-section" id="skills">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12"   style="position: absolute;">
+                        <div class="skillbar" data-percent="100%">
+                            <div class="skillbar-title"><span>HTML5</span></div>
+                            <div class="bar2"></div>
+                            <div class="skillbar-bar"></div>
+                        </div>
+
+                        <div class="skillbar" data-percent="80%">
+                            <div class="skillbar-title"><span>HTML5</span></div>
+                            <div class="bar2"></div>
+                            <div class="skillbar-bar"></div>
+                        </div>
+
+                        <div class="skillbar" data-percent="80%">
+                            <div class="skillbar-title"><span>HTML5</span></div>
+                            <div class="bar2"></div>
+                            <div class="skillbar-bar"></div>
+                        </div>
+                        <div class="skillbar" data-percent="80%">
+                            <div class="skillbar-title"><span>HTML5</span></div>
+                            <div class="bar2"></div>
+                            <div class="skillbar-bar"></div>
+                        </div>
+
+                        <div class="skillbar" data-percent="80%">
+                            <div class="skillbar-title"><span>HTML5</span></div>
+                            <div class="bar2"></div>
+                            <div class="skillbar-bar"></div>
+                        </div>
+
+                        <div class="skillbar" data-percent="80%">
+                            <div class="skillbar-title"><span>HTML5</span></div>
+                            <div class="bar2"></div>
+                            <div class="skillbar-bar"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h1 style="color: #FCCE47">SKILLS</h1>
+        </div>
 	    
-	    <div class="info-section" id="portfolio">
-	    	<h3>PORTFOLIO</h3>
-		    <hr class="divider">
-		    <div class="container">
-			    <div class="row">
-			    	<div class="col-lg-4 img-responsive"><img src="img.jpg" alt="..."></img></div> 
-			    	<div class="col-lg-4 img-responsive"><img src="img.jpg" alt="..."></img></div> 
-			    	<div class="col-lg-4 img-responsive"><img src="img.jpg" alt="..."></img></div> 
-			    </div>
-			    
-			    <div class="row">
-			    	<div class="col-lg-4 img-responsive"><img src="img.jpg" alt="..."></img></div> 
-			    	<div class="col-lg-4 img-responsive"><img src="img.jpg" alt="..."></img></div> 
-			    	<div class="col-lg-4 img-responsive"><img src="img.jpg" alt="..."></img></div> 
-			    </div>
-	    </div>
-	</div>	
+        <div class="info-section" id="portfolio">
+            <div class="container" style="position: absolute;">
+                <div class="row">
+                    <div class="col-lg-4 img-responsive"><img src="img.jpg" alt="..."></img></div>
+                    <div class="col-lg-4 img-responsive"><img src="img.jpg" alt="..."></img></div>
+                    <div class="col-lg-4 img-responsive"><img src="img.jpg" alt="..."></img></div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-4 img-responsive"><img src="img.jpg" alt="..."></img></div>
+                    <div class="col-lg-4 img-responsive"><img src="img.jpg" alt="..."></img></div>
+                    <div class="col-lg-4 img-responsive"><img src="img.jpg" alt="..."></img></div>
+                </div>
+            </div>
+            <h1 style="color: #E94135">PORTFOLIO</h1>
+        </div>	
  </div>
  
 <script type="text/javascript">

@@ -24,55 +24,122 @@ table {
 }
 
 .jumbotron{
-	width: 100%;
+    height: 100vh;
+    width: 100%;
 	display: table;
 	margin: 0px !important;
 	padding: 0px !important;
 	border-top: 20px solid #F2B103;
 }
 
+.jumbotron h1 {
+    margin-bottom:0px;
+    font-size: 6em !important;
+    margin-top: 20vh;
+    z-index: 1000 !important;
+    font-family: 'Patua One', cursive;
+    text-align: center;
+    opacity: 0;
+    animation: fade-in-right .6s ease 0.3s forwards;
+}
+
+.jumbotron h2 {
+    margin-bottom: 10vh;
+    font-family: 'Roboto Slab', serif;
+    text-align: center;
+    opacity: 0;
+    animation: fade-in-right .5s ease .6s forwards;
+}
+
 #bubbles{
-	width: 100%;
-	margin: 0px auto;
+	margin: 40px auto;
 	padding: 10px;	
 }
 
-#education-bubble:hover{
+#bubbles i{
+    color: aliceblue;
+}
+
+#bubbles p {
+    margin-top: 10px;
+    opacity:.7;
+    font-size: 1.1em !important;
+    font-family: 'Patua One', cursive;
+    text-align: center;
+    position: relative;
+}
+
+#bubbles a:hover + p {
+    animation: bubble-text .15s ease forwards;
+}
+
+/* Standard syntax */
+@keyframes bubble-text {
+    0% {
+        top: 0px;
+    }
+
+    60% {
+        
+        top: 20px;
+    }
+
+    100% {
+        top: 15px;
+    }
+}
+
+
+#education-bubble a{
+    background-color: #D2E3FC;
+    transition: 0.25s ease;
+}
+
+#education-bubble a:hover{
 	background-color: #659cf6;
 }
 
-#exp-bubble:hover{
-	background-color: #5bb873;
-	transition: 0.1s ease;
+#exp-bubble a{
+    background-color: #CEEAD6;
+    transition: 0.25s ease;
 }
 
-#skills-bubble:hover{
-	background-color: #FCCE47;
-	transition: 0.1s ease;
+#exp-bubble a:hover {
+    background-color: #5bb873;
 }
 
-#work-bubble:hover{
+#skills-bubble a{
+    background-color: #FFEFC3;
+    transition: 0.25s ease;
+}
+
+#skills-bubble a:hover {
+    background-color: #FCCE47;
+}
+
+#work-bubble a{
+    background-color: #F8D2CE;
+    transition: 0.25s ease;
+}
+
+#work-bubble a:hover{
 	background-color: #E94135;
-	transition: 0.1s ease;
 }
 
 #bubbles div{
 	display: inline-block;
-	border-radius: 50%;
-	margin: 10px;
+	border-radius: 50%;   
+	margin: 25px;
 }
 
 #bubbles a{
-	padding: 20px !important;
-	margin: 0px auto;
+	padding: 40px !important;
 	text-align: center;
 	border-radius: 50%;
-	color: #81C692;
 	transition: 0.1s ease;
 }
 
 #bubbles a:hover{
-  background: #cca92c;
   transform: scale(1.2);
   cursor: pointer;
   box-shadow: 0 0 0 rgba(204,169,44, 0.4);
@@ -99,10 +166,10 @@ table {
       -moz-box-shadow: 0 0 0 20px rgba(204,169,44, 0);
       box-shadow: 0 0 0 20px rgba(204,169,44, 0);
   }
-  100% {
-      -moz-box-shadow: 0 0 0 0 rgba(204,169,44, 0);
-      box-shadow: 0 0 0 0 rgba(204,169,44, 0);
-  }
+    100% {
+        -moz-box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+        box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+    }
 }
 
 #bubbles i{
@@ -129,23 +196,34 @@ table {
 	width: 100px;
 	float: right;
 	position: fixed;
-	height: 100px;
+    
 }
 
-.sidebar{
-	z-index: 3000 !important;
-	padding: 10px;
+.sidebar {
+    right: 0;
+    top: 100px;
+    float: right;
+    position: fixed;
+    z-index: 3000 !important;
+    padding: 10px;
+    height: 200px;
 }
 
 .sidebar i{
-	padding: 15px;
-	background-color: red;
-	border-radius: 50%;
+    padding: 10px;
 }
 
-.sidebar li{
+.sidebar a {
+    display: block;
+    padding: 10px;
+    margin: 10px;
+    background-color: red;
+    border-radius: 50%;
+}
+
+.sidebar a{
 	opacity: 0;
-	animation: fade-in-left .6s ease forwards;
+	animation: fade-in-left .7s ease forwards;
 }
 
 .sidebar a:nth-child(1) { animation-delay: .2s }
@@ -179,14 +257,6 @@ table {
 	display: block;
 }
 
-.navbar-navs a{	
-	width: 25%;
-	text-align: center;
-	padding: 15px !important;
-	color: #212529;
-	opacity: 0;
-	animation: fade-in-up .5s ease forwards;
-}
 
 .navbar-nav a:nth-child(1) { animation-delay: .2s }
 .navbar-nav a:nth-child(2) { animation-delay: .4s }
@@ -194,14 +264,12 @@ table {
 .navbar-nav a:nth-child(4) { animation-delay: .8s }
 
 .navbar-nav a:hover{	
-	background-color: #fdd66f;
 	border-bottom: 8px solid #212529;
 	transition: 0.2s ease;
 	font-weight: bold;
 }
 .navbar-nav a:hover > i{	
 	position: relative;
-	color: #212529;
   	-webkit-animation: mymove 5s infinite; /* Safari 4.0 - 8.0 */
   	animation: mymove 1.2s ease infinite;
 }
@@ -215,7 +283,7 @@ table {
     transition: all 0.2s ease;
 }
 
-.nav-active i, .nav-active p{
+.nav-actives i, .nav-actives p{
     color: #F2B103;
     -webkit-transition: all 0.2s ease;
     -moz-transition: all 0.2s ease;
@@ -257,15 +325,6 @@ table {
 	color: #212529;
 }
 
-.info #experience{
-	background-color: #EBEBEC;
-}
-
-.info #portfolio{
-	background-color: #EBEBEC;
-}
-
-
 .info{
 	text-align: center;
 	width: 100%;
@@ -286,12 +345,19 @@ table {
 	z-index: 0 !important;
 	padding: 20px;
 }
+.info-section .container {
+    position: relative;
+}
 
-.info-section h3 {
+
+.info-section h1 {
+    opacity: 0;
+    font-size: 6em;
+    margin-left: -50vw;
+    position: relative;
 	z-index: 0 !important;
-	opacity: 0;
 	font-family: 'Patua One', cursive;
-	margin: 20px auto;
+	margin-top: 15vh;
 }
 
 
@@ -322,6 +388,18 @@ table {
 	margin-top: 10px;
 }
 
+#education {
+    background-color: #D2E3FC;
+}
+#experience {
+    background-color: #CEEAD6;
+}
+#skills {
+    background-color: #FFEFC3;
+}
+#portfolio {
+    background-color: #F8D2CE;
+}
 .exp-section .container{
 	margin-top: 10px;
 	border-bottom: 1px solid #dadada;
@@ -346,9 +424,10 @@ table {
 }
 
 .skillbar-title {
-	font-weight:bold;
-	font-size:13px;
-	text-align: left;
+    font-weight: bold;
+    font-size: 13px;
+    text-align: left;
+    @import url('file:///C:\Users\Ashish\Desktop\parallax-scrolling-demo\css\main.css');
 }
 
 .skillbar-title span {
@@ -386,24 +465,10 @@ table {
 	animation: fade-in-right 1s ease forwards;
 }
 
-.jumbotron h1 {
-	z-index: 1000 !important;
-	font-family: 'Patua One', cursive;
-	text-align: center;
-	opacity: 0;
-	animation: fade-in-right .6s ease 0.3s forwards;
-}
 
-.jumbotron p{
-	font-family: 'Roboto Slab', serif;
-	text-align: center;
-	opacity: 0;
-	animation: fade-in-right .5s ease .6s forwards;
-}
 
 .entry-right {
 	opacity: 0;
-	animation: fade-in-right 1s ease forwards;
 }
 
 
