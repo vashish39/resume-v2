@@ -146,7 +146,7 @@
 	}); */
 	
 	//change navbar based on current section
-	$(document).scroll(function() {
+    $(window).bind("load resize scroll", function (e) {
 		var width = $(window).width();
 		var currentScroll = $(this).scrollTop();
 		console.log(currentScroll);
@@ -170,19 +170,16 @@
 		} 
 		else if (currentScroll > (test()*a) && currentScroll < (test()*b)) {
             console.log("ed");
-            parallaxScroll1();
-			$('.info-section h1').eq(0).addClass("entry-right");			
+            parallaxScroll1();		
 			$('.sidebar a').eq(0).addClass("sidebar-active");
 			$('.sidebar a:not(:nth-child(1))').removeClass("sidebar-active");
 			$('.nav-item').eq(0).addClass("nav-active");
-			$('.nav-item:not(:nth-child(1))').removeClass("nav-active");
-			
+			$('.nav-item:not(:nth-child(1))').removeClass("nav-active");			
 			$('.skillbar .skillbar-bar').css({"width":"0%", "transition":".1s linear"});
 		} 
 		else if (currentScroll > (test()*b) && currentScroll < (test()*c)) {
             console.log("work");
             parallaxScroll2();
-			$('.info-section h1').eq(1).addClass("entry-right");
 			$('.sidebar a').eq(1).addClass("sidebar-active");
 			$('.sidebar a:not(:nth-child(2))').removeClass("sidebar-active");
 			$('.nav-item').eq(1).addClass("nav-active");
@@ -191,8 +188,7 @@
 		}
 		else if (currentScroll > (test()*c) && currentScroll < (test()*d)) {
             console.log("sk");
-            parallaxScroll3();
-			$('.info-section h1').eq(2).addClass("entry-right");			
+            parallaxScroll3();		
 			$('.sidebar a').eq(2).addClass("sidebar-active");
 			$('.sidebar a:not(:nth-child(3))').removeClass("sidebar-active");
 			$('.nav-item').eq(2).addClass("nav-active");
@@ -201,18 +197,82 @@
 		}
 		else if (currentScroll > (test()*d)) {
             console.log("port");
-            parallaxScroll4();
-			$('.info-section h1').eq(3).addClass("entry-right");			
+            parallaxScroll4();		
 			$('.sidebar a').eq(3).addClass("sidebar-active");
 			$('.sidebar a:not(:nth-child(4))').removeClass("sidebar-active");
 			$('.nav-item').eq(3).addClass("nav-active");
 			$('.nav-item:not(:nth-child(4))').removeClass("nav-active");
 			$('.skillbar .skillbar-bar').css({"width":"0%", "transition":".1s linear"});
 		}
-	});
-	
-	// main menu click
-	
+    });
+
+//change navbar based on current section
+$(document).scroll(function () {
+    var width = $(window).width();
+    var currentScroll = $(this).scrollTop();
+    console.log(currentScroll);
+    if (width < 768) {
+        var a = 0.5;
+        var b = 1.6;
+        var c = 2.6;
+        var d = 3.6;
+    }
+    else if (width > 768) {
+        var a = 0.5;
+        var b = 1.6;
+        var c = 2.6;
+        var d = 3.6;
+    }
+    if (currentScroll > (test() * 0.5) && currentScroll < (test() * 0.6)) {
+        console.log("ed-sec");
+        $('.edu-1').addClass("edu-section-active");
+    }
+});
+    /*
+    else if (currentScroll > (test() * a) && currentScroll < (test() * b)) {
+        console.log("ed");
+        parallaxScroll1();
+        $('.info-section h1').eq(0).addClass("entry-right");
+        $('.sidebar a').eq(0).addClass("sidebar-active");
+        $('.sidebar a:not(:nth-child(1))').removeClass("sidebar-active");
+        $('.nav-item').eq(0).addClass("nav-active");
+        $('.nav-item:not(:nth-child(1))').removeClass("nav-active");
+        $('.skillbar .skillbar-bar').css({ "width": "0%", "transition": ".1s linear" });
+    }
+    else if (currentScroll > (test() * b) && currentScroll < (test() * c)) {
+        console.log("work");
+        parallaxScroll2();
+        $('.info-section h1').eq(1).addClass("entry-right");
+        $('.sidebar a').eq(1).addClass("sidebar-active");
+        $('.sidebar a:not(:nth-child(2))').removeClass("sidebar-active");
+        $('.nav-item').eq(1).addClass("nav-active");
+        $('.nav-item:not(:nth-child(2))').removeClass("nav-active");
+        $('.skillbar .skillbar-bar').css({ "width": "0%", "transition": ".1s linear" });
+    }
+    else if (currentScroll > (test() * c) && currentScroll < (test() * d)) {
+        console.log("sk");
+        parallaxScroll3();
+        $('.info-section h1').eq(2).addClass("entry-right");
+        $('.sidebar a').eq(2).addClass("sidebar-active");
+        $('.sidebar a:not(:nth-child(3))').removeClass("sidebar-active");
+        $('.nav-item').eq(2).addClass("nav-active");
+        $('.nav-item:not(:nth-child(3))').removeClass("nav-active");
+        $('.skillbar .skillbar-bar').css({ "width": "80%", "transition": "1s ease-in" });
+    }
+    else if (currentScroll > (test() * d)) {
+        console.log("port");
+        parallaxScroll4();
+        $('.info-section h1').eq(3).addClass("entry-right");
+        $('.sidebar a').eq(3).addClass("sidebar-active");
+        $('.sidebar a:not(:nth-child(4))').removeClass("sidebar-active");
+        $('.nav-item').eq(3).addClass("nav-active");
+        $('.nav-item:not(:nth-child(4))').removeClass("nav-active");
+        $('.skillbar .skillbar-bar').css({ "width": "0%", "transition": ".1s linear" });
+    }*/
+
+
+
+	// main menu click	
 	$(document).ready(function(){
 		$('.nav-item').eq(0).click(() => {
 			var width = $(window).width();
@@ -324,25 +384,28 @@
     });
 
 function parallaxScroll1() {
-    var scrolled = $(window).scrollTop() - test();
+    var scrolled = $(window).scrollTop() - test()*.25;
     console.log(scrolled);
     $('.info-section h1').eq(0).css({ "top": (0 - (scrolled * 1)) + 'px',  "opacity": "1" });
 }
 function parallaxScroll2() {
-    var scrolled = $(window).scrollTop() - test()*2;
-    console.log(scrolled);
+    var scrolled = $(window).scrollTop() - test()*1.75;
+    console.log("2:"+scrolled);
+    $('.info-section h1').eq(0).css({ "opacity": "0" });
     $('.info-section h1').eq(1).css({ "top": (0 - (scrolled * 1)) + 'px',  "opacity": "1" });
 }
 
 function parallaxScroll3() {
-    var scrolled = $(window).scrollTop() - test() * 3;
+    var scrolled = $(window).scrollTop() - test() * 2.75;
     console.log(scrolled);
+    $('.info-section h1').eq(1).css({ "opacity": "0" });
     $('.info-section h1').eq(2).css({ "top": (0 - (scrolled * 1)) + 'px',  "opacity": "1" });
 }
 
 function parallaxScroll4() {
-    var scrolled = $(window).scrollTop() - test() * 4;;
+    var scrolled = $(window).scrollTop() - test() * 3.75;
     console.log(scrolled);
+    $('.info-section h1').eq(2).css({ "opacity": "0" });
     $('.info-section h1').eq(3).css({ "top": (0 - (scrolled * 1)) + 'px',  "opacity": "1" });
 }
 /*
@@ -377,29 +440,3 @@ function queue(start) {
         $(this).delay(fadeInDiv * 1000).fadeIn(1000);
     });
 });*/
-/*
-$(document).ready(function () {
-    var $word1 = $('.year h3'),
-        $word2 = $('.insti h4'),
-        $word3 = $('.insti h5');
-        $word4 = $('.cgpa h5');
-
-    $word1.delay(500).fadeIn(1000, function () {
-        $word2.fadeIn(1000, function () {
-            $word3.fadeIn(1000, function () {
-                $word4.fadeIn(1000);
-            });
-        });
-    });
-});*/
-
-function f(baseID, n, t) {
-    var jq = $("#" + baseID + n);
-    console.log(jq[0]);
-    if (jq.length) {
-        jq.hide().fadeIn(t).promise().done(function () {
-            f(baseID, n + 1, t);
-        });
-    }
-};
-f('fades', 1, 1000);

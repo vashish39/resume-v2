@@ -351,13 +351,13 @@ table {
 
 
 .info-section h1 {
-    opacity: 0;
+    opacity: 0 ;
     font-size: 6em;
     margin-left: -50vw;
     position: relative;
-	z-index: 0 !important;
-	font-family: 'Patua One', cursive;
-	margin-top: 15vh;
+    z-index: 0 !important;
+    font-family: 'Patua One', cursive;
+    margin-top: 3.25em;
 }
 
 
@@ -464,10 +464,13 @@ table {
 	animation: fade-in-right 1s ease forwards;
 }
 
-
+.edu-section-active {
+    opacity: 0;
+    animation: fade-in-up 1s ease forwards;
+}
 
 .entry-right {
-	opacity: 0;
+    opacity: 0;
 }
 
 
@@ -504,10 +507,6 @@ table {
   }
 }
 
-#education .row {
-    background-color: lightgrey;
-}
-
 .year h3{
     font-size: 1.7em;
     font-weight: bold;
@@ -531,4 +530,18 @@ table {
     font-family: 'Roboto Slab', serif;
     text-align: left;
     position: relative;
+}
+
+.education-panel{
+    margin-top: 100px;
+    padding: 20px;
+    position: relative;
+}
+.education-panel-child {
+    margin-top: 100px;
+    padding: 50px;
+    position: relative;
+    background-color: aliceblue;
+    overflow-y: hidden;
+    overflow-x: hidden;
 }
