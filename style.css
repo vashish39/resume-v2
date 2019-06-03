@@ -331,33 +331,25 @@ table {
 	margin: 10px auto;
 }
 
-
-.divider{
-	height: 10px;
-	text-align: center;
-	width: 4%;
-	margin: 10px auto;
-	background-color: #F2B103;
-}
-
-
 .info-section {
 	z-index: 0 !important;
 	padding: 20px;
+	display: block;
+	clear: both;
 }
 .info-section .container {
-    position: relative;
 }
 
 
 .info-section h1 {
+	text-shadow: 2px 2px #D2E3FC;
     opacity: 0 ;
     font-size: 6em;
     margin-left: -50vw;
     position: relative;
     z-index: 0 !important;
     font-family: 'Patua One', cursive;
-    margin-top: 3.25em;
+    margin-top: 3em;
 }
 
 
@@ -465,8 +457,8 @@ table {
 }
 
 .edu-section-active {
-    opacity: 0;
-    animation: fade-in-up 1s ease forwards;
+    opacity: 1 !important;
+    animation: fade-in-right .5s ease-out forwards;
 }
 
 .entry-right {
@@ -486,12 +478,12 @@ table {
 }
 
 @keyframes fade-in-right {
-  from {
+  0%   {
     opacity: 0;
     transform: translateX(-30px);
   }
-  to {
-    opacity: 1;
+  100% {
+  	opacity: 1;
     transform: translateX(0);
   }
 }
@@ -507,18 +499,24 @@ table {
   }
 }
 
-.year h3{
+.insti h6 {
+	background: black;
+	color: white;
+	width: 100px;
+	padding: 3px 9px;
+	font-family: 'Roboto Slab', serif;
+    text-align: center;
+    display: flex;
+}
+
+.insti h3 {
     font-size: 1.7em;
     font-weight: bold;
 }
 
 .insti h4 {
-    font-size: 1.7em;
-    font-weight: bold;
-}
-
-.insti h5 {
     font-size: 1.5em;
+    opacity: .8;
 }
 
 .cgpa h5 {
@@ -526,22 +524,39 @@ table {
     font-weight: bold;
 }
 
-#education h3, #education h4, #education h5 {
+#education h3, #education h4 {
     font-family: 'Roboto Slab', serif;
     text-align: left;
     position: relative;
+    display: flex;
 }
 
 .education-panel{
+	clear: both;
     margin-top: 100px;
     padding: 20px;
     position: relative;
 }
 .education-panel-child {
-    margin-top: 100px;
-    padding: 50px;
+	transition: all 0.2s ease;
+	border-radius: 20px;
+    margin: auto auto;
+    padding: 20px;
     position: relative;
     background-color: aliceblue;
-    overflow-y: hidden;
-    overflow-x: hidden;
+}
+
+.education-info-child{
+	opacity: 0;
+	padding: 10px 20px;
+	margin: 10px;
+	overflow: hidden;
+	
+}
+
+.divider{
+	right: 105%;
+	position: relative;
+	width: 90%;
+	border-bottom: 1px solid #D2E3FC;
 }

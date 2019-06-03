@@ -157,10 +157,10 @@
 	    	var d = 3.6;
 	    }
 	    else if (width > 768) {
-	    	var a = 0.5;
-	    	var b = 1.6;
-	    	var c = 2.6;
-	    	var d = 3.6;
+	    	var a = 0.3;
+	    	var b = 1.5;
+	    	var c = 2.25;
+	    	var d = 3.25;
 	    }
 		if (currentScroll < (test()*a)) {
 			console.log("top");
@@ -170,7 +170,8 @@
 		} 
 		else if (currentScroll > (test()*a) && currentScroll < (test()*b)) {
             console.log("ed");
-            parallaxScroll1();		
+            parallaxScroll1();
+            $('.education-panel-child').css({"box-shadow": "0px 0px 8px 10px #c9dcfc", "transition":"1s ease", "transition-delay":".75s"});
 			$('.sidebar a').eq(0).addClass("sidebar-active");
 			$('.sidebar a:not(:nth-child(1))').removeClass("sidebar-active");
 			$('.nav-item').eq(0).addClass("nav-active");
@@ -223,11 +224,27 @@ $(document).scroll(function () {
         var c = 2.6;
         var d = 3.6;
     }
-    if (currentScroll > (test() * 0.5) && currentScroll < (test() * 0.6)) {
+    if (currentScroll > (test() * 0.5)) {
         console.log("ed-sec");
-        $('.edu-1').addClass("edu-section-active");
+        $('.education-info-child:nth-child(1)').addClass("edu-section-active");
+        $(".divider").eq(0).delay(500).queue(function() {
+            $(this).css({ "right": "0%", "transition": ".5s ease" }).dequeue();
+        }).fadeIn();
+    }
+    if (currentScroll > (test() * 0.6)) {
+        console.log("ed-sec");
+        $('.education-info-child:nth-child(2)').addClass("edu-section-active");
+        $(".divider").eq(1).delay(1000).queue(function() {
+            $(this).css({ "right": "0%", "transition": ".5s ease" }).dequeue();
+        });
+    }
+    if (currentScroll > (test() * 0.7)) {
+        console.log("ed-sec");
+        $('.education-info-child:nth-child(3)').addClass("edu-section-active");
     }
 });
+
+
     /*
     else if (currentScroll > (test() * a) && currentScroll < (test() * b)) {
         console.log("ed");
@@ -384,29 +401,31 @@ $(document).scroll(function () {
     });
 
 function parallaxScroll1() {
+	
+	//when 75% of first section is scrolled
     var scrolled = $(window).scrollTop() - test()*.25;
-    console.log(scrolled);
-    $('.info-section h1').eq(0).css({ "top": (0 - (scrolled * 1)) + 'px',  "opacity": "1" });
+    console.log("1:"+scrolled);
+    $('.info-section h1').eq(0).css({ "margin-top": (0 - (scrolled * .5)) + 'px',  "opacity": "1" });
 }
 function parallaxScroll2() {
-    var scrolled = $(window).scrollTop() - test()*1.75;
+    var scrolled = $(window).scrollTop() - test()*2.25;
     console.log("2:"+scrolled);
     $('.info-section h1').eq(0).css({ "opacity": "0" });
-    $('.info-section h1').eq(1).css({ "top": (0 - (scrolled * 1)) + 'px',  "opacity": "1" });
+    $('.info-section h1').eq(1).css({ "margin-top": (0 - (scrolled * .5)) + 'px',  "opacity": "1" });
 }
 
 function parallaxScroll3() {
-    var scrolled = $(window).scrollTop() - test() * 2.75;
+    var scrolled = $(window).scrollTop() - test() * 3.25;
     console.log(scrolled);
     $('.info-section h1').eq(1).css({ "opacity": "0" });
-    $('.info-section h1').eq(2).css({ "top": (0 - (scrolled * 1)) + 'px',  "opacity": "1" });
+    $('.info-section h1').eq(2).css({ "margin-top": (0 - (scrolled * .5)) + 'px',  "opacity": "1" });
 }
 
 function parallaxScroll4() {
-    var scrolled = $(window).scrollTop() - test() * 3.75;
+    var scrolled = $(window).scrollTop() - test() * 4;
     console.log(scrolled);
     $('.info-section h1').eq(2).css({ "opacity": "0" });
-    $('.info-section h1').eq(3).css({ "top": (0 - (scrolled * 1)) + 'px',  "opacity": "1" });
+    $('.info-section h1').eq(3).css({ "margin-top": (0 - (scrolled * .5)) + 'px',  "opacity": "1" });
 }
 /*
 queue(function () {
