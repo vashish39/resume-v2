@@ -19,8 +19,11 @@
 		    $(".info-section").css({"height": "100vh"});
 	    }
 	    else if(width < 768){
-		    $(".info-section:not(:nth-child(2)").css({"height": "100vh"});
-		    $(".info-section:nth-child(2)").css({"height": "125vh"});
+	    	$(".info-section").eq(0).css({"height": "150vh"});
+	    	$(".info-section").eq(1).css({"height": "200vh"});
+	    	$(".info-section").eq(2).css({"height": "100vh"});
+	    	$(".info-section").eq(3).css({"height": "100vh"});
+	    	$(".info-section h1").css({"font-size": "3em"});
 	    }
 	}
 	
