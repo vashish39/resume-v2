@@ -328,22 +328,19 @@ table {
 .info{
 	text-align: center;
 	width: 100%;
-	margin: 10px auto;
 }
 
 .info-section {
 	z-index: 0 !important;
-	padding: 20px;
-	display: block;
-	clear: both;
 }
+
 .info-section .container {
 }
 
 
-.info-section h1 {
-	text-shadow: 2px 2px #D2E3FC;
-    opacity: 0 ;
+.info-header {
+    text-shadow: 2px 2px #D2E3FC;
+    opacity: 0;
     font-size: 6em;
     margin-left: -50vw;
     position: relative;
@@ -531,19 +528,18 @@ table {
     display: flex;
 }
 
-.education-panel{
-	clear: both;
-    margin-top: 100px;
-    padding: 20px;
+.education-panel {
     position: relative;
 }
+
 .education-panel-child {
-	transition: all 0.2s ease;
-	border-radius: 20px;
-    margin: auto auto;
+    transition: all 0.2s ease;
+    border-radius: 20px;
+    margin-top: 13%;
     padding: 20px;
     position: relative;
     background-color: aliceblue;
+    box-shadow: 0 0 8px 10px #c9dcfc;
 }
 
 .education-info-child{
@@ -559,4 +555,21 @@ table {
 	position: relative;
 	width: 90%;
 	border-bottom: 1px solid #D2E3FC;
+}
+
+@keyframes pulse2 {
+    0% {
+        -moz-box-shadow: 0 0 5px 5px rgba(191, 212, 246, 0.74);
+        box-shadow: 0 0 5px 5px rgba(191, 212, 246, 0.74);
+    }
+
+    50% {
+        -moz-box-shadow: 0 0 10px 12px rgba(181, 207, 244, 0.80);
+        box-shadow: 0 0 10px 10px rgba(181, 207, 244, 0.80);
+    }
+
+    100% {
+        -moz-box-shadow: 0 0 5px 5px rgba(191, 212, 246, 0.74);
+        box-shadow: 0 0 5px 5px rgba(191, 212, 246, 0.74);
+    }
 }

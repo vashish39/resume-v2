@@ -174,7 +174,7 @@
 		else if (currentScroll > (test()*a) && currentScroll < (test()*b)) {
             console.log("ed");
             parallaxScroll1();
-            $('.education-panel-child').css({"box-shadow": "0px 0px 8px 10px #c9dcfc", "transition":"1s ease", "transition-delay":".75s"});
+            $('.education-panel-child').css({"animation": "pulse2 3s infinite"});
 			$('.sidebar a').eq(0).addClass("sidebar-active");
 			$('.sidebar a:not(:nth-child(1))').removeClass("sidebar-active");
 			$('.nav-item').eq(0).addClass("nav-active");
@@ -300,7 +300,7 @@ $(document).scroll(function () {
 		    	$('html, body').animate({scrollTop: $('.info-section').eq(0).offset().top -75}, 500);
 		    }
 		    else if(width > 560){
-		    	$('html, body').animate({scrollTop: $('.info-section').eq(0).offset().top -100}, 500);
+		    	$('html, body').animate({scrollTop: $('.info-section').eq(0).offset().top -0}, 500);
 		    }		    
 		});
 	});
@@ -314,7 +314,7 @@ $(document).scroll(function () {
 		    	$('html, body').animate({scrollTop: $('.info-section').eq(1).offset().top -75}, 500);
 		    }
 		    else if(width > 560){
-		    	$('html, body').animate({scrollTop: $('.info-section').eq(1).offset().top -100}, 500);
+		    	$('html, body').animate({scrollTop: $('.info-section').eq(1).offset().top -0}, 500);
 		    }		    
 		});
 	});
@@ -336,7 +336,7 @@ $(document).scroll(function () {
 		    }
 		    if(width > 560){
 		    	$('html, body').animate({
-			        scrollTop: $('.info-section').eq(2).offset().top -100
+			        scrollTop: $('.info-section').eq(2).offset().top -0
 			    }, 500);
 		    	$('.skillbar .skillbar-bar').css({"width":"80%", "transition":"1s ease-in"});
 		    }
@@ -350,7 +350,7 @@ $(document).scroll(function () {
 		    	$('html, body').animate({scrollTop: $('.info-section').eq(3).offset().top -75}, 500);
 		    }
 		    else if(width > 560){
-		    	$('html, body').animate({scrollTop: $('.info-section').eq(3).offset().top -100}, 500);
+		    	$('html, body').animate({scrollTop: $('.info-section').eq(3).offset().top -0}, 500);
 		    }		
 		});
 	});
@@ -406,26 +406,26 @@ $(document).scroll(function () {
 function parallaxScroll1() {
 	
 	//when 75% of first section is scrolled
-    var scrolled = $(window).scrollTop() - test()*.25;
+    var scrolled = $(window).scrollTop() + test()*.4;
     console.log("1:"+scrolled);
     $('.info-section h1').eq(0).css({ "margin-top": (0 - (scrolled * .5)) + 'px',  "opacity": "1" });
 }
 function parallaxScroll2() {
-    var scrolled = $(window).scrollTop() - test()*2.25;
+    var scrolled = $(window).scrollTop() - test()*.6;
     console.log("2:"+scrolled);
     $('.info-section h1').eq(0).css({ "opacity": "0" });
     $('.info-section h1').eq(1).css({ "margin-top": (0 - (scrolled * .5)) + 'px',  "opacity": "1" });
 }
 
 function parallaxScroll3() {
-    var scrolled = $(window).scrollTop() - test() * 3.25;
+    var scrolled = $(window).scrollTop() - test() * 2.3;
     console.log(scrolled);
     $('.info-section h1').eq(1).css({ "opacity": "0" });
     $('.info-section h1').eq(2).css({ "margin-top": (0 - (scrolled * .5)) + 'px',  "opacity": "1" });
 }
 
 function parallaxScroll4() {
-    var scrolled = $(window).scrollTop() - test() * 4;
+    var scrolled = $(window).scrollTop() - test() * 3.25;
     console.log(scrolled);
     $('.info-section h1').eq(2).css({ "opacity": "0" });
     $('.info-section h1').eq(3).css({ "margin-top": (0 - (scrolled * .5)) + 'px',  "opacity": "1" });
