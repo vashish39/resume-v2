@@ -1,5 +1,5 @@
 body {
-	opacity: .1 !important;
+	opacity: .5 !important;
 	line-height: 1;
 }
 ol, ul {
@@ -15,17 +15,47 @@ q:before, q:after {
 }
 
 .container-fluid{
+	overflow: hidden;
 	margin: 0px !important;
 	padding: 0px !important;
+}
+
+.entry-blocks div {	
+	height: 25vh;
+	width: 100%;
+	position: relative;
+}
+
+.entry-blocks{
+	z-index: 10000;
+	height: 100vh;
+}
+
+.block-1 {
+    background-color: #D2E3FC;
+    left: 0%;
+}
+.block-2 {
+    background-color: #CEEAD6;
+    right: 0%;
+}
+.block-3 {
+    background-color: #FFEFC3;
+    left: 0%;
+}
+.block-4 {
+    background-color: #F8D2CE;
+    right: 0%;
 }
 
 .jumbotron{
     height: 100vh;
     width: 100%;
 	display: table;
+	position: relative;
+	z-index: 100;
 	margin: 0px !important;
 	padding: 0px !important;
-	border-top: 20px solid #F2B103;
 }
 
 .title {
@@ -332,6 +362,8 @@ q:before, q:after {
 .skillbar {
 	display:block;
 	width:100%;
+	margin: 10px auto;
+	width: 75%;
 	border-radius:3px;
 	-moz-border-radius:10px;
 	-webkit-border-radius:3px;
@@ -347,34 +379,36 @@ q:before, q:after {
 	transition-property:width, background-color;
 }
 
-.skillbar-title {
-    font-weight: bold;
-    font-size: 13px;
-    text-align: left;
-}
 
 .skillbar-title span {
+	border-radius: 5px;
+	padding: 5px 10px;
 	position: relative;
-	top: 15px;
-	padding: 10px;
-	height:35px;
-	line-height:35px;
+	top: 10px;
+    background: black;
+	color: white;
+	font-family: 'Roboto Slab', serif;
+    text-align: center;
 }
 
 .skillbar-bar {
 	width: 0px;
-	height:15px;
+	height:20px;
 	background:#F2B103;
 	border-radius:30px;
+	position: relative;
+	z-index: 1000;
 }
 
-.bar2{
+.background-bar{
 	position: relative;
-	top: 15px;
-	height:15px;
-	z-index: -100;
+	top: 22px;
+	height:24px;
+	z-index: 0;
 	background: #C0C2C4;
-	border-radius:30px;
+	border-radius:33px;
+	left: -3px;
+	opacity: .5;
 }
 
 #portfolio .row img{
@@ -426,7 +460,7 @@ q:before, q:after {
   }
 }
 
-.insti h6 {
+.insti h6, .exp-title h6 {
 	background: black;
 	color: white;
 	width: 100px;
@@ -436,7 +470,7 @@ q:before, q:after {
     display: flex;
 }
 
-.insti h3 {
+.insti h3, .exp-title h3{
     font-size: 1.7em;
     font-weight: bold;
 }
@@ -444,6 +478,12 @@ q:before, q:after {
 .insti h4 {
     font-size: 1.5em;
     opacity: .8;
+}
+
+.exp-title h4 {
+    font-size: 1.2em;
+    opacity: .8;
+    font-style: italic;
 }
 
 .cgpa h5 {
@@ -512,7 +552,7 @@ q:before, q:after {
 .experience-panel {
     transition: all 0.2s ease;
     border-radius: 20px;
-    margin-top: 13%;
+    margin-top: 10%;
     padding: 20px;
     position: relative;
     background-color: aliceblue;
@@ -531,4 +571,21 @@ q:before, q:after {
 	position: relative;
 	width: 90%;
 	border-bottom: 1px solid #D2E3FC;
+}
+
+.skills-panel {
+    transition: all 0.2s ease;
+    border-radius: 20px;
+    margin-top: 15%;
+    padding: 20px;
+    position: relative;
+    background-color: aliceblue;
+    box-shadow: 0 0 8px 10px #c9dcfc;
+}
+
+.skills-panel-child{
+	opacity: 1;
+	padding: 10px 20px;
+	margin: 10px auto;
+	overflow: hidden;	
 }

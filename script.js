@@ -234,6 +234,7 @@ $(document).scroll(function () {
             $(this).css({ "right": "0%", "transition": ".5s ease" }).dequeue();
         }).fadeIn();
     }
+    
     if (currentScroll > (test() * 0.6)) {
         console.log("ed-sec");
         $('.education-panel-child:nth-child(2)').addClass("edu-section-active");
@@ -404,9 +405,7 @@ $(document).scroll(function () {
     });
 
 function parallaxScroll1() {
-	
-	//when 75% of first section is scrolled
-    var scrolled = $(window).scrollTop() + test()*.4;
+	var scrolled = $(window).scrollTop() + test()*.4;
     console.log("1:"+scrolled);
     $('.info-section h1').eq(0).css({ "margin-top": (0 - (scrolled * .5)) + 'px',  "opacity": "1" });
 }
@@ -429,6 +428,13 @@ function parallaxScroll4() {
     console.log(scrolled);
     $('.info-section h1').eq(2).css({ "opacity": "0" });
     $('.info-section h1').eq(3).css({ "margin-top": (0 - (scrolled * .5)) + 'px',  "opacity": "1" });
+}
+
+function reveal() {
+    $('.block-1').css({"left":"100%", "transition":".5s ease"});
+    $('.block-2').css({"right":"100%", "transition":".5s ease"});
+    $('.block-3').css({"left":"100%", "transition":".5s ease"});
+    $('.block-4').css({"right":"100%", "transition":".5s ease"});
 }
 /*
 queue(function () {
