@@ -174,7 +174,7 @@
 		else if (currentScroll > (test()*a) && currentScroll < (test()*b)) {
             console.log("ed");
             parallaxScroll1();
-            $('.education-panel-child').css({"animation": "pulse2 3s infinite"});
+            $('.education-panel').css({"animation": "pulse2 3s infinite"});
 			$('.sidebar a').eq(0).addClass("sidebar-active");
 			$('.sidebar a:not(:nth-child(1))').removeClass("sidebar-active");
 			$('.nav-item').eq(0).addClass("nav-active");
@@ -229,21 +229,21 @@ $(document).scroll(function () {
     }
     if (currentScroll > (test() * 0.5)) {
         console.log("ed-sec");
-        $('.education-info-child:nth-child(1)').addClass("edu-section-active");
-        $(".divider").eq(0).delay(500).queue(function() {
+        $('.education-panel-child:nth-child(1)').addClass("edu-section-active");
+        $(".edu-divider").eq(0).delay(500).queue(function() {
             $(this).css({ "right": "0%", "transition": ".5s ease" }).dequeue();
         }).fadeIn();
     }
     if (currentScroll > (test() * 0.6)) {
         console.log("ed-sec");
-        $('.education-info-child:nth-child(2)').addClass("edu-section-active");
-        $(".divider").eq(1).delay(1000).queue(function() {
+        $('.education-panel-child:nth-child(2)').addClass("edu-section-active");
+        $(".edu-divider").eq(1).delay(1000).queue(function() {
             $(this).css({ "right": "0%", "transition": ".5s ease" }).dequeue();
         });
     }
     if (currentScroll > (test() * 0.7)) {
         console.log("ed-sec");
-        $('.education-info-child:nth-child(3)').addClass("edu-section-active");
+        $('.education-panel-child:nth-child(3)').addClass("edu-section-active");
     }
 });
 
