@@ -168,8 +168,13 @@
 		} 
 		else if (currentScroll > (test()*a) && currentScroll < (test()*b)) {
 			$('.sidebar a').eq(0).css({"width": "80px"});
-			$('.sidebar a:not(:nth-child(1))').css({"width": "70px"});
-		} 
+            $('.sidebar a:not(:nth-child(1))').css({ "width": "70px" });
+            $("sidebar a").eq(0).hover(function () {
+                $(this).css($({ "width": "85px" }));
+            }, function () {
+                    $(this).css({"width": "80px"});
+            });
+        } 
 		else if (currentScroll > (test()*b) && currentScroll < (test()*c)) {
 			$('.sidebar a').eq(1).css({"width": "80px"});
 			$('.sidebar a:not(:nth-child(2))').css({"width": "70px"});
@@ -474,7 +479,7 @@ function parallaxScroll4() {
 }
 
 function reveal() {
-	$('.entry-blocks h1').css({"animation": "fade-inout 2s ease .5s"});
+	$('.entry-blocks h1').css({"animation": "fade-inout 2s ease forwards .5s"});
     $('.block-1').css({"left":"100%", "transition":".5s ease", "transition-delay": "1.5s"});
     $('.block-2').css({"right":"100%", "transition":".5s ease", "transition-delay": "1.75s"});
     $('.block-3').css({"left":"100%", "transition":".5s ease", "transition-delay": "2s"});
