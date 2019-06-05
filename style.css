@@ -36,13 +36,14 @@ q:before, q:after {
 	font-family: 'Patua One', cursive;
     text-align: center;
     opacity: 0;
-    font-size: 10em !important;
+    font-size: 12em !important;
     position: absolute;
     margin-left: auto;
 	margin-right: auto;
 	left: 0;
-	top: 15%;
+	top: 25%;
 	right: 0;
+	color: black;
 }
 
 .block-1 {
@@ -94,7 +95,7 @@ q:before, q:after {
     font-family: 'Roboto Slab', serif;
     text-align: center;
     opacity: 0;
-    animation: fade-in-right .5s ease 3s forwards;
+    animation: fade-in-left .5s ease 3s forwards;
 }
 
 #bubbles{
@@ -257,30 +258,44 @@ q:before, q:after {
     background-color: #F8D2CE;
 }
 .sidebar {
-    right: 0;
+    left: -60px;
     top: 100px;
-    float: right;
     position: fixed;
     z-index: 3000 !important;
-    padding: 10px;
-    height: 200px;
 }
 
 .sidebar i{
-    padding: 10px;
+    color: white;
+    opacity: 0;
 }
 
 .sidebar a {
-    display: block;
-    padding: 10px;
-    margin: 10px;
-    background-color: red;
-    border-radius: 50%;
+	box-sizing: border-box;
+	display: flex;
+    align-items: center;
+    width: 70px;
+    height: 70px;
+    opacity: 0;
+    border: 20px solid transparent;
+    animation: fade-in-right .7s ease forwards;
+    transition: .2s ease;
 }
 
-.sidebar a{
-	opacity: 0;
-	animation: fade-in-left .7s ease forwards;
+.sidebar a:first-child:hover {
+    width: 90px;
+}
+
+
+@keyframes pop-out {
+  0%   {
+    width: 70px;
+  }
+  80% {
+  	width: 85px;
+  }
+  100% {
+  	width: 80px;
+  }
 }
 
 .sidebar a:nth-child(1) { animation-delay: .2s }
@@ -289,21 +304,12 @@ q:before, q:after {
 .sidebar a:nth-child(4) { animation-delay: .8s }
 
 
-.sidebar-active i{
-	background-color: black;
-	transition: 0.2s ease;
-	-webkit-transition: all 0.2s ease;
-    -moz-transition: all 0.2s ease;
-    -o-transition: all 0.2s ease;
-    transition: all 0.2s ease;
+.sidebar-active a{
 }
 
-.nav-actives i, .nav-actives p{
-    color: #F2B103;
-    -webkit-transition: all 0.2s ease;
-    -moz-transition: all 0.2s ease;
-    -o-transition: all 0.2s ease;
-    transition: all 0.2s ease;
+.sidebar-active i{
+	opacity: 1;
+    display: relative;
 }
 
 /* Standard syntax */
@@ -479,6 +485,7 @@ q:before, q:after {
 }
 
 
+
 @keyframes fade-in-right {
   0%   {
     opacity: 0;
@@ -643,6 +650,23 @@ q:before, q:after {
 }
 
 .skills-panel-child{
+	opacity: 1;
+	padding: 10px 20px;
+	margin: 10px auto;
+	overflow: hidden;	
+}
+
+.portfolio-panel {
+    transition: all 0.2s ease;
+    border-radius: 20px;
+    margin-top: 15%;
+    padding: 20px;
+    position: relative;
+    background-color: aliceblue;
+    box-shadow: 0 0 8px 10px #c9dcfc;
+}
+
+.portfolio-panel-child{
 	opacity: 1;
 	padding: 10px 20px;
 	margin: 10px auto;

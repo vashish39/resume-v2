@@ -107,12 +107,12 @@
 		$('.scroll-up').click(() => {
 			var width = $(window).width();
 		    if(width < 560){
-		    	$('.scroll-up').css("left", "80%");
-		    	$('html, body').animate({scrollTop: $('.jumbotron').offset().top -100}, 500);
+		    	$('.scroll-up').css("left", "85%");
+		    	$('html, body').animate({scrollTop: $('.jumbotron').offset().top -0}, 500);
 		    }
 		    else if(width > 560){		    	
-		    	$('.scroll-up').css("left", "90%");
-		    	$('html, body').animate({scrollTop: $('.jumbotron').offset().top -100}, 500);		    	
+		    	$('.scroll-up').css("left", "94%");
+		    	$('html, body').animate({scrollTop: $('.jumbotron').offset().top -0}, 500);		    	
 		    }		    
 		});
 	});
@@ -147,7 +147,43 @@
 	    }
 	  });
 	}); */
-	
+	//change navbar based on current section
+    $(window).bind("load resize scroll", function (e) {
+		var width = $(window).width();
+		var currentScroll = $(this).scrollTop();
+		console.log(currentScroll);
+	    if (width < 768) {
+	    	var a = 0.5;
+	    	var b = 1.6;
+	    	var c = 2.6;
+	    	var d = 3.6;
+	    }
+	    else if (width > 768) {
+	    	var a = 0.3;
+	    	var b = 1.5;
+	    	var c = 2.25;
+	    	var d = 3.25;
+	    }
+		if (currentScroll < (test()*a)) {
+		} 
+		else if (currentScroll > (test()*a) && currentScroll < (test()*b)) {
+			$('.sidebar a').eq(0).css({"width": "80px"});
+			$('.sidebar a:not(:nth-child(1))').css({"width": "70px"});
+		} 
+		else if (currentScroll > (test()*b) && currentScroll < (test()*c)) {
+			$('.sidebar a').eq(1).css({"width": "80px"});
+			$('.sidebar a:not(:nth-child(2))').css({"width": "70px"});
+		}
+		else if (currentScroll > (test()*c) && currentScroll < (test()*d)) {
+			$('.sidebar a').eq(2).css({"width": "80px"});
+			$('.sidebar a:not(:nth-child(3))').css({"width": "70px"});
+		}
+		else if (currentScroll > (test()*d)) {
+			$('.sidebar a').eq(3).css({"width": "80px"});
+			$('.sidebar a:not(:nth-child(4))').css({"width": "70px"});
+		}
+    });
+    
 	//change navbar based on current section
     $(window).bind("load resize scroll", function (e) {
 		var width = $(window).width();
@@ -186,10 +222,10 @@
             console.log("work");
             parallaxScroll2();
 			$('.sidebar a').eq(1).addClass("sidebar-active");
-			$('.sidebar a:not(:nth-child(2))').removeClass("sidebar-active");
+			$('.sidebar a:not(:nth-child(2))').removeClass("sidebar-active");			
 			$('.nav-item').eq(1).addClass("nav-active");
 			$('.nav-item:not(:nth-child(2))').removeClass("nav-active");
-			$('.skillbar .skillbar-bar').css({"width":"0%", "transition":".1s linear"});
+			$('.skillbar .skillbar-bar').css({"width":"0%","box-shadow": "none", "transition":".1s linear"});
 		}
 		else if (currentScroll > (test()*c) && currentScroll < (test()*d)) {
             console.log("sk");
@@ -198,7 +234,13 @@
 			$('.sidebar a:not(:nth-child(3))').removeClass("sidebar-active");
 			$('.nav-item').eq(2).addClass("nav-active");
 			$('.nav-item:not(:nth-child(3))').removeClass("nav-active");
-			$('.skillbar .skillbar-bar').css({"width":"80%", "transition":"1s ease-in"});
+			$('.skillbar .skillbar-bar').eq(0).css({"width":"100%", "box-shadow": "0 0 2px 2px #F2B103", "transition":".5s ease-in .2s"});
+			$('.skillbar .skillbar-bar').eq(1).css({"width":"100%", "box-shadow": "0 0 2px 2px #F2B103", "transition":".5s ease-in .4s"});
+			$('.skillbar .skillbar-bar').eq(2).css({"width":"70%", "box-shadow": "0 0 2px 2px #F2B103", "transition":".5s ease-in .6s"});
+			$('.skillbar .skillbar-bar').eq(3).css({"width":"75%", "box-shadow": "0 0 2px 2px #F2B103", "transition":".5s ease-in .8s"});
+			$('.skillbar .skillbar-bar').eq(4).css({"width":"80%", "box-shadow": "0 0 2px 2px #F2B103", "transition":".5s ease-in 1s"});
+			$('.skillbar .skillbar-bar').eq(5).css({"width":"100%", "box-shadow": "0 0 2px 2px #F2B103", "transition":".5s ease-in 1.2s"});
+			$('.skillbar .skillbar-bar').eq(6).css({"width":"80%", "box-shadow": "0 0 2px 2px #F2B103", "transition":".5s ease-in 1.4s"});
 		}
 		else if (currentScroll > (test()*d)) {
             console.log("port");
@@ -358,7 +400,7 @@ $(document).scroll(function () {
 	});
 	
 	$(document).ready(function(){
-		$('.sidebar li').eq(0).click(() => {
+		$('.sidebar a').eq(0).click(() => {
 			var width = $(window).width();
 		    if(width < 560){
 		    	$('html, body').animate({scrollTop: $('.info-section').eq(0).offset().top -75}, 500);
@@ -370,7 +412,7 @@ $(document).scroll(function () {
 	});
 	
 	$(document).ready(function(){
-		$('.sidebar li').eq(1).click(() => {
+		$('.sidebar a').eq(1).click(() => {
 			var width = $(window).width();
 		    if(width < 560){
 		    	$('html, body').animate({scrollTop: $('.info-section').eq(1).offset().top -75}, 500);
@@ -382,7 +424,7 @@ $(document).scroll(function () {
 	});
 	
 	$(document).ready(function(){
-		$('.sidebar li').eq(2).click(() => {
+		$('.sidebar a').eq(2).click(() => {
 			var width = $(window).width();
 		    if(width < 560){
 		    	$('html, body').animate({scrollTop: $('.info-section').eq(2).offset().top -75}, 500);
@@ -394,7 +436,7 @@ $(document).scroll(function () {
 	});
 	
 	$(document).ready(function(){
-		$('.sidebar li').eq(3).click(() => {
+		$('.sidebar a').eq(3).click(() => {
 			var width = $(window).width();
 		    if(width < 560){
 		    	$('html, body').animate({scrollTop: $('.info-section').eq(3).offset().top -75}, 500);
@@ -418,7 +460,7 @@ function parallaxScroll2() {
 }
 
 function parallaxScroll3() {
-    var scrolled = $(window).scrollTop() - test() * 2.3;
+    var scrolled = $(window).scrollTop() - test() * 1.6;
     console.log(scrolled);
     $('.info-section h1').eq(1).css({ "opacity": "0" });
     $('.info-section h1').eq(2).css({ "margin-top": (0 - (scrolled * .5)) + 'px',  "opacity": "1" });
