@@ -167,6 +167,7 @@
 	    }
 		if (currentScroll < (test()*a)) {
 			console.log("top");
+			reveal();
 			$('.nav-item').removeClass("nav-active");
             $('.skillbar .skillbar-bar').css({ "width": "0%", "transition": ".1s linear" });
             $('.sidesbar').css({ "margin-left": "100" });
@@ -431,11 +432,13 @@ function parallaxScroll4() {
 }
 
 function reveal() {
-    $('.block-1').css({"left":"100%", "transition":".5s ease"});
-    $('.block-2').css({"right":"100%", "transition":".5s ease"});
-    $('.block-3').css({"left":"100%", "transition":".5s ease"});
-    $('.block-4').css({"right":"100%", "transition":".5s ease"});
+	$('.entry-blocks h1').css({"animation": "fade-inout 2s ease .5s"});
+    $('.block-1').css({"left":"100%", "transition":".5s ease", "transition-delay": "1.5s"});
+    $('.block-2').css({"right":"100%", "transition":".5s ease", "transition-delay": "1.75s"});
+    $('.block-3').css({"left":"100%", "transition":".5s ease", "transition-delay": "2s"});
+    $('.block-4').css({"right":"100%", "transition":".5s ease", "transition-delay": "2.25s"});
 }
+
 /*
 queue(function () {
     return $(".year h3").animate({ "left": "15px", "opacity": "1" }, "fast");

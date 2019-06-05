@@ -1,5 +1,5 @@
 body {
-	opacity: .5 !important;
+	opacity: .1 !important;
 	line-height: 1;
 }
 ol, ul {
@@ -27,8 +27,22 @@ q:before, q:after {
 }
 
 .entry-blocks{
-	z-index: 10000;
+	z-index: 1000;
 	height: 100vh;
+}
+
+.entry-blocks h1{
+	z-index: 10000;
+	font-family: 'Patua One', cursive;
+    text-align: center;
+    opacity: 0;
+    font-size: 10em !important;
+    position: absolute;
+    margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	top: 15%;
+	right: 0;
 }
 
 .block-1 {
@@ -47,15 +61,21 @@ q:before, q:after {
     background-color: #F8D2CE;
     right: 0%;
 }
-
+.landing-page{
+	z-index: 0;
+	position: absolute;
+	top:0px;
+    left:0px;
+    bottom:0px;
+    right:0px;
+}
 .jumbotron{
     height: 100vh;
     width: 100%;
-	display: table;
 	position: relative;
-	z-index: 100;
 	margin: 0px !important;
 	padding: 0px !important;
+	background-color: white !important;
 }
 
 .title {
@@ -66,7 +86,7 @@ q:before, q:after {
     font-family: 'Patua One', cursive;
     text-align: center;
     opacity: 0;
-    animation: fade-in-right .6s ease 0.3s forwards;
+    animation: fade-in-right .6s ease 2.75s forwards;
 }
 
 .sub-title {
@@ -74,7 +94,7 @@ q:before, q:after {
     font-family: 'Roboto Slab', serif;
     text-align: center;
     opacity: 0;
-    animation: fade-in-right .5s ease .6s forwards;
+    animation: fade-in-right .5s ease 3s forwards;
 }
 
 #bubbles{
@@ -98,10 +118,19 @@ q:before, q:after {
 
 
 #bubbles div{
+	opacity: 0;
 	display: inline-block;
 	border-radius: 50%;   
 	margin: 25px;
+	animation: fade-in-up .5s forwards;
 }
+
+
+#bubbles div:nth-child(1) { animation-delay: 3.2s }
+#bubbles div:nth-child(2) { animation-delay: 3.4s }
+#bubbles div:nth-child(3) { animation-delay: 3.6s }
+#bubbles div:nth-child(4) { animation-delay: 3.8s }
+
 
 #bubbles a{
 	padding: 40px !important;
@@ -438,6 +467,18 @@ q:before, q:after {
   }
 }
 
+@keyframes fade-in-down {
+  from {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+}
+
+
 @keyframes fade-in-right {
   0%   {
     opacity: 0;
@@ -460,6 +501,24 @@ q:before, q:after {
   }
 }
 
+@keyframes fade-inout {
+  0%   {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  20% {
+  	opacity: 1;
+    transform: translateY(0);
+  }
+  80%{
+   opacity: 1;
+   transform: translateY(0);
+  }
+   100%{
+   opacity: 0;
+   transform: translateY(-30px);
+  }
+}
 .insti h6, .exp-title h6 {
 	background: black;
 	color: white;
