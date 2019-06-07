@@ -1,5 +1,5 @@
 body {
-	opacity: 1 !important;
+	opacity: .1 !important;
 	line-height: 1;
 }
 ol, ul {
@@ -71,6 +71,8 @@ q:before, q:after {
     right:0px;
 }
 .jumbotron{
+	min-height: 600px;
+	overflow: hidden;
     height: 100vh;
     width: 100%;
 	position: relative;
@@ -245,18 +247,38 @@ q:before, q:after {
     background-color: #F8D2CE;
 }
 
-#education {
-    background-color: #D2E3FC;
+.section-icon{
+	top: 20px;
+	opacity: 0;
+	margin: 0px auto;
+	position: relative;
+	text-align: center;
 }
-#experience {
-    background-color: #CEEAD6;
+
+.section-icon i{
+	padding: 10px;
+	border-radius: 50%;
+	border: 2px solid #659cf6;
 }
-#skills {
-    background-color: #FFEFC3;
+
+.section-header{
+	width: 100%;
+	margin: 0px auto;
+	position: relative;
+	text-align: center;
 }
-#portfolio {
-    background-color: #F8D2CE;
+
+.header-line{
+	position: absolute;
+	height: 2px;
+	width: 0%;
+	top: 67px;
+	margin: 10px auto;
+	z-index: 1;
+	right: 0;
+	left: 0;
 }
+
 .sidebar {
     left: -60px;
     top: 100px;
@@ -346,19 +368,23 @@ q:before, q:after {
 }
 
 .info-section {
+	min-height: 1000px;
+	overflow: hidden;
 	z-index: 0 !important;
 }
 
 .info-header {
 	text-align: center;
     text-shadow: 2px 2px #D2E3FC;
-    opacity: 0;
     font-size: 6em;
-    margin-left: -50vw;
+    margin: 20px auto;
+    z-index: 2;
+   	background-color: #D2E3FC;
     position: relative;
-    z-index: 0 !important;
     font-family: 'Patua One', cursive;
-    margin-top: 3em;
+    display: inline-block;
+    opacity: 0;
+    padding: 0px 10px;
 }
 
 
@@ -464,11 +490,11 @@ q:before, q:after {
 
 
 @keyframes fade-in-up {
-  from {
+  0% {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(100px);
   }
-  to {
+  100% {
     opacity: 1;
     transform: translateY(0);
   }
@@ -476,12 +502,12 @@ q:before, q:after {
 
 @keyframes fade-in-down {
   from {
-    opacity: 1;
-    transform: translateY(0px);
+    opacity: 0;
+    transform: translateY(-30px);
   }
   to {
-    opacity: 0;
-    transform: translateY(30px);
+    opacity: 1;
+    transform: translateY(0px);
   }
 }
 
@@ -531,7 +557,12 @@ q:before, q:after {
    transform: translateY(-500px);
     }
 }
-.insti h6, .exp-title h6 {
+
+.edu-title *{
+	opacity: 0;
+}
+
+.edu-title h6, .exp-title h6 {
 	background: black;
 	color: white;
 	width: 100px;
@@ -541,23 +572,23 @@ q:before, q:after {
     display: flex;
 }
 
-.insti h3, .exp-title h3{
+.edu-title h3, .exp-title h3{
     font-size: 1.7em;
     font-weight: bold;
 }
 
-.insti h4 {
+.edu-title h4 {
     font-size: 1.5em;
-    opacity: .8;
+    opacity: 0;
 }
 
 .exp-title h4 {
     font-size: 1.2em;
-    opacity: .8;
     font-style: italic;
 }
 
 .cgpa h5 {
+	opacity: 0;
     font-size: 1.5em;
     font-weight: bold;
 }
@@ -576,7 +607,6 @@ q:before, q:after {
 .education-panel {
     transition: all 0.2s ease;
     border-radius: 20px;
-    margin-top: 13%;
     padding: 20px;
     position: relative;
     background-color: aliceblue;
@@ -584,7 +614,6 @@ q:before, q:after {
 }
 
 .education-panel-child{
-	opacity: 0;
 	padding: 10px 20px;
 	margin: 10px;
 	overflow: hidden;	
@@ -614,16 +643,54 @@ q:before, q:after {
     }
 }
 
+.exp-title *{
+	opacity: 0;
+}
 
-.edu-section-active {
-    opacity: 1 !important;
+.exp-details{
+	opacity: 0;
+}
+
+.section-active .year{
     animation: fade-in-right .5s ease-out forwards;
 }
+
+.section-active .degree{
+    animation: fade-in-right .5s ease-out .1s forwards;
+}
+
+.section-active .college{
+    animation: fade-in-right .5s ease-out .2s forwards;
+}
+
+.section-active .cgpa h5{
+    animation: fade-in-right .5s ease-out .4s forwards;
+}
+
+.section-active .edu-divider{
+    animation: fade-in-right .5s ease-out .5s forwards;
+}
+
+.section-active .company{
+    animation: fade-in-right .5s ease-out forwards;
+}
+
+.section-active .exp-year{
+    animation: fade-in-right .5s ease-out .1s forwards;
+}
+
+.section-active .position{
+    animation: fade-in-right .5s ease-out .2s forwards;
+}
+
+.section-active .exp-details{
+    animation: fade-in-right .5s ease-out .3s forwards;
+}
+
 
 .experience-panel {
     transition: all 0.2s ease;
     border-radius: 20px;
-    margin-top: 10%;
     padding: 20px;
     position: relative;
     background-color: aliceblue;
@@ -647,7 +714,6 @@ q:before, q:after {
 .skills-panel {
     transition: all 0.2s ease;
     border-radius: 20px;
-    margin-top: 15%;
     padding: 20px;
     position: relative;
     background-color: aliceblue;
@@ -664,7 +730,6 @@ q:before, q:after {
 .portfolio-panel {
     transition: all 0.2s ease;
     border-radius: 20px;
-    margin-top: 15%;
     padding: 20px;
     position: relative;
     background-color: aliceblue;
