@@ -692,8 +692,8 @@ q:before, q:after {
     border-radius: 20px;
     padding: 20px;
     position: relative;
-    background-color: aliceblue;
-    box-shadow: 0 0 8px 10px #c9dcfc;
+    background-color: #edf8f0;
+    box-shadow: 0 0 8px 10px #bbe3c6;
 }
 
 .experience-panel-child{
@@ -715,8 +715,8 @@ q:before, q:after {
     border-radius: 20px;
     padding: 20px;
     position: relative;
-    background-color: aliceblue;
-    box-shadow: 0 0 8px 10px #c9dcfc;
+    background-color: #fffdf4;
+    box-shadow: 0 0 8px 10px #ffe6a4;
 }
 
 .skills-panel-child{
@@ -731,8 +731,8 @@ q:before, q:after {
     border-radius: 20px;
     padding: 20px;
     position: relative;
-    background-color: aliceblue;
-    box-shadow: 0 0 8px 10px #c9dcfc;
+    background-color: #fdf5f4;
+    box-shadow: 0 0 8px 10px #f3c4be;
 }
 
 .portfolio-panel-child{
