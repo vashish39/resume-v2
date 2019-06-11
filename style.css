@@ -437,6 +437,9 @@ q:before, q:after {
 	transition-property:width, background-color;
 }
 
+.skillbar-title {
+    opacity: 0;
+}
 
 .skillbar-title span {
 	border-radius: 5px;
@@ -567,23 +570,23 @@ q:before, q:after {
 }
 
 .edu-title h3, .exp-title h3{
-    font-size: 1.7em;
+    font-size: 1.5em;
     font-weight: bold;
 }
 
 .edu-title h4 {
-    font-size: 1.5em;
+    font-size: 1.2em;
     opacity: 0;
 }
 
 .exp-title h4 {
-    font-size: 1.2em;
+    font-size: 1em;
     font-style: italic;
 }
 
 .cgpa h5 {
 	opacity: 0;
-    font-size: 1.5em;
+    font-size: 1.3em;
     font-weight: bold;
 }
 

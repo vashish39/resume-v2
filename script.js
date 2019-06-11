@@ -227,7 +227,6 @@ $(document).ready(function(){
 			console.log("top");
 			$('.nav-item').removeClass("nav-active");
             $('.skillbar .skillbar-bar').css({ "width": "0%", "transition": ".1s linear" });
-            $('.sidesbar').css({ "margin-left": "100" });
 		} 
 		else if (currentScroll > (test()*a) && currentScroll < (test()*b)) {
             console.log("ed");
@@ -249,7 +248,7 @@ $(document).ready(function(){
 			$('.sidebar a:not(:nth-child(2))').removeClass("sidebar-active");			
 			$('.nav-item').eq(1).addClass("nav-active");
 			$('.nav-item:not(:nth-child(2))').removeClass("nav-active");
-			$('.skillbar .skillbar-bar').css({"width":"0%","box-shadow": "none", "transition":".1s linear"});
+//			$('.skillbar .skillbar-bar').css({"width":"0%","box-shadow": "none", "transition":".1s linear"});
 		}
 		else if (currentScroll > (test()*c) && currentScroll < (test()*d)) {
             $('.info-header').eq(2).css({"animation": "fade-in-up .5s forwards ease"});
@@ -259,6 +258,10 @@ $(document).ready(function(){
 			$('.sidebar a:not(:nth-child(3))').removeClass("sidebar-active");
 			$('.nav-item').eq(2).addClass("nav-active");
 			$('.nav-item:not(:nth-child(3))').removeClass("nav-active");
+			$('.skillbar-title').each(function(i) {
+				  $(this).css('animation', "fade-in-right .5s ease forwards");
+				  $(this).css('animation-delay', .2*i+"s");
+			});
 			$('.skillbar .skillbar-bar').eq(0).css({"width":"100%", "box-shadow": "0 0 2px 2px #F2B103", "transition":".5s ease-in .2s"});
 			$('.skillbar .skillbar-bar').eq(1).css({"width":"100%", "box-shadow": "0 0 2px 2px #F2B103", "transition":".5s ease-in .4s"});
 			$('.skillbar .skillbar-bar').eq(2).css({"width":"70%", "box-shadow": "0 0 2px 2px #F2B103", "transition":".5s ease-in .6s"});
@@ -275,7 +278,7 @@ $(document).ready(function(){
 			$('.sidebar a:not(:nth-child(4))').removeClass("sidebar-active");
 			$('.nav-item').eq(3).addClass("nav-active");
 			$('.nav-item:not(:nth-child(4))').removeClass("nav-active");
-			$('.skillbar .skillbar-bar').css({"width":"0%", "transition":".1s linear"});
+//			$('.skillbar .skillbar-bar').css({"width":"0%", "transition":".1s linear"});
 		}
     });
 
