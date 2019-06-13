@@ -1,10 +1,11 @@
 
 $(document).ready(function(){
-	$('.entry-blocks h1').css({"animation": "fade-inout 2s ease forwards .5s"});
-    $('.block-1').css({"left":"100%", "transition":".5s ease", "transition-delay": "1.5s"});
-    $('.block-2').css({"right":"100%", "transition":".5s ease", "transition-delay": "1.75s"});
-    $('.block-3').css({"left":"100%", "transition":".5s ease", "transition-delay": "2s"});
-    $('.block-4').css({"right":"100%", "transition":".5s ease", "transition-delay": "2.25s"});
+//	$('.entry-blocks h1').css({"animation": "fade-inout 2s ease forwards .5s"});
+	$('.entry-blocks h1').delay(3500).hide(0);
+    $('.block-1').css({"left":"200%", "transition":"2s ease", "transition-delay": "2.5s"});
+    $('.block-2').css({"right":"200%", "transition":"2s ease", "transition-delay": "2.75s"});
+    $('.block-3').css({"left":"200%", "transition":"2s ease", "transition-delay": "2.6s"});
+    $('.block-4').css({"right":"200%", "transition":"2s ease", "transition-delay": "2.35s"});
     $('.info').hide(0).delay(3500).show(0);
 });
 

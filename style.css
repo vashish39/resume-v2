@@ -22,8 +22,9 @@ q:before, q:after {
 
 .entry-blocks div {	
 	height: 25vh;
-	width: 100%;
+	width: 200%;
 	position: relative;
+	z-index: 1000;
 }
 
 .entry-blocks{
@@ -32,10 +33,10 @@ q:before, q:after {
 }
 
 .entry-blocks h1{
-	z-index: 10000;
+	z-index: 1;
 	font-family: 'Patua One', cursive;
     text-align: center;
-    opacity: 0;
+    opacity: 1;
     font-size: 12em !important;
     position: absolute;
     margin-left: auto;
@@ -48,19 +49,19 @@ q:before, q:after {
 
 .block-1 {
     background-color: #659cf6;
-    left: 0%;
+    left: -200%;
 }
 .block-2 {
     background-color: #5bb873;
-    right: 0%;
+    right: -200%;
 }
 .block-3 {
     background-color: #FCCE47;
-    left: 0%;
+    left: -200%;
 }
 .block-4 {
     background-color: #E94135;
-    right: 0%;
+    right: -200%;
 }
 .landing-page{
 	z-index: 0;
@@ -85,11 +86,11 @@ q:before, q:after {
     margin-bottom:0px;
     font-size: 6em !important;
     margin-top: 20vh;
-    z-index: 1000 !important;
+    z-index: 1 !important;
     font-family: 'Patua One', cursive;
     text-align: center;
     opacity: 0;
-    animation: fade-in-right .6s ease 2.75s forwards;
+    animation: fade-in-right .6s ease 3.75s forwards;
 }
 
 .sub-title {
@@ -97,7 +98,7 @@ q:before, q:after {
     font-family: 'Roboto Slab', serif;
     text-align: center;
     opacity: 0;
-    animation: fade-in-left .5s ease 3s forwards;
+    animation: fade-in-left .5s ease 4s forwards;
 }
 
 #bubbles{
@@ -739,4 +740,13 @@ q:before, q:after {
 	padding: 10px 20px;
 	margin: 10px auto;
 	overflow: hidden;	
+}
+
+@keyframes shine {
+    0% {
+        transform: translatex(0px) translatey(0px)
+    }
+    100% {
+        transform: translatex(100px) translatey(100px);
+    }
 }
