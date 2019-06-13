@@ -1,6 +1,10 @@
+@import url(https://fonts.googleapis.com/css?family=Fjalla+One);
+
+
 body {
 	opacity: 1 !important;
 	line-height: 1;
+	
 }
 ol, ul {
 	list-style: none;
@@ -20,6 +24,25 @@ q:before, q:after {
 	padding: 0px !important;
 }
 
+@keyframes backgroundcolor {
+    0% {
+        background-color: #e1efff;
+    }
+
+    33% {        
+        background-color: #f2fcf5;
+    }
+
+    66% {
+        background-color: #fcf6e5;
+    }
+    
+    
+    100% {
+        background-color: #f9f0ef;
+    }
+}
+
 .entry-blocks div {	
 	height: 25vh;
 	width: 200%;
@@ -36,7 +59,7 @@ q:before, q:after {
 	z-index: 1;
 	font-family: 'Patua One', cursive;
     text-align: center;
-    opacity: 1;
+    opacity: 0;
     font-size: 12em !important;
     position: absolute;
     margin-left: auto;
@@ -79,7 +102,7 @@ q:before, q:after {
 	position: relative;
 	margin: 0px !important;
 	padding: 0px !important;
-	background-color: white !important;
+	animation: backgroundcolor 10s ease infinite;
 }
 
 .title {
@@ -90,7 +113,7 @@ q:before, q:after {
     font-family: 'Patua One', cursive;
     text-align: center;
     opacity: 0;
-    animation: fade-in-right .6s ease 3.75s forwards;
+    animation: fade-in-right .6s ease .75s forwards;
 }
 
 .sub-title {
@@ -98,7 +121,18 @@ q:before, q:after {
     font-family: 'Roboto Slab', serif;
     text-align: center;
     opacity: 0;
-    animation: fade-in-left .5s ease 4s forwards;
+    animation: fade-in-left .5s ease .4s forwards;
+}
+
+.bigb{
+	background-color: red;
+	height: 20px;
+	width: 20px;
+	border-radius: 50%;
+	top: 38px;
+	left: 38px;
+	position: absolute;
+	z-index: -1000;
 }
 
 #bubbles{
@@ -129,18 +163,19 @@ q:before, q:after {
 	animation: fade-in-up .5s forwards;
 }
 
-
+/* 
 #bubbles div:nth-child(1) { animation-delay: 3.2s }
 #bubbles div:nth-child(2) { animation-delay: 3.4s }
 #bubbles div:nth-child(3) { animation-delay: 3.6s }
-#bubbles div:nth-child(4) { animation-delay: 3.8s }
+#bubbles div:nth-child(4) { animation-delay: 3.8s } */
 
 
 #bubbles a{
+	z-index: -1;
 	padding: 40px !important;
 	text-align: center;
 	border-radius: 50%;
-	transition: 0.1s ease;
+	transition: 0.5s ease;
 }
 
 #bubbles a:hover{
@@ -208,6 +243,10 @@ q:before, q:after {
 	background-color: #659cf6;
 }
 
+.bigb:hover{
+	transform: scale(30);
+}
+
 #exp-bubble a{
     background-color: #CEEAD6;
     transition: 0.25s ease;
@@ -236,16 +275,16 @@ q:before, q:after {
 }
 
 #education {
-    background-color: #D2E3FC;
+    background-image: linear-gradient(45deg, #f8f9fa, #b3d7ff);
 }
 #experience {
-    background-color: #CEEAD6;
+	background-image: linear-gradient(45deg, #f8f9fa, #CEEAD6);
 }
 #skills {
-    background-color: #FFEFC3;
+	background-image: linear-gradient(45deg, #f8f9fa, #FFEFC3);
 }
 #portfolio {
-    background-color: #F8D2CE;
+	background-image: linear-gradient(45deg, #f8f9fa, #F8D2CE);
 }
 
 .section-icon{
