@@ -10,12 +10,16 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
-	  $('html').mousemove(function(e){
-	        var x = e.pageX*.05 - this.offsetLeft;
-	        var y = e.pageY*.005 - this.offsetTop;
-	        $('.title').css({'margin-right': x,'margin-top': -y+20+"vh"});
-	  });
-	});
+  $('html').mousemove(function(e){
+        var x = e.pageX - this.offsetLeft;
+        var y = e.pageY - this.offsetTop;
+        $('#bubbles div').css({'margin-right': x*.005,'margin-top': -y*.005+20+"vh"});
+        $('#bubbles').css({'margin-top': -y*.005+2+"vh"});
+        $('.title').css({'margin-right': x*.005,'margin-top': -y*.005+20+"vh"});
+        $('.jumbotron').css('background-position', -x*.05 + 'px ' + -y*.05 + 'px' );
+        $('.subtitle').css({'margin-right': x});
+  });
+});
 
 	var testing = function() {
 		var w1 = $("#bubbless").width();
@@ -547,3 +551,5 @@ function queue(start) {
         $(this).delay(fadeInDiv * 1000).fadeIn(1000);
     });
 });*/
+
+	
