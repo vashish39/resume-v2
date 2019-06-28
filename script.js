@@ -1,6 +1,6 @@
 
 $(document).ready(function(){
-	$('.entry-blocks h1').css({"animation": "fade-inout 3.5s ease forwards .5s"});
+	$('.entry-blocks h1').css({"animation": "fade-inout 3s ease forwards .5s"});
 	$('.entry-blocks h1').delay(3500).hide(0);
     $('.block-1').css({"left":"200%", "transition":"3s ease", "transition-delay": "2.5s"});
     $('.block-2').css({"right":"200%", "transition":"2.6s ease", "transition-delay": "2.45s"});
@@ -15,7 +15,7 @@ $(document).ready(function(){
         var x = e.pageX - this.offsetLeft;
         var y = e.pageY - this.offsetTop;
         $('#bubbles div').css({'margin-right': x*.005,'margin-top': -y*.005+2+"vh"});
-        $('.title').css({'margin-right': x*.005,'margin-top': -y*.005+20+"vh"});
+        $('.title').css({'margin-right': x*.005,'margin-top': -y*.005+25+"vh"});
 //        $('.education-panel').css({'right': x*.01,'top': -y*.01});
         $('.jumbotron').css('background-position', -x*.05 + 'px ' + -y*.05 + 'px' );
         $('.subtitle').css({'margin-right': x});
