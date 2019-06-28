@@ -6,7 +6,8 @@ $(document).ready(function(){
     $('.block-2').css({"right":"200%", "transition":"2.6s ease", "transition-delay": "2.45s"});
     $('.block-3').css({"left":"200%", "transition":"2.8s ease", "transition-delay": "2.6s"});
     $('.block-4').css({"right":"200%", "transition":"3s ease", "transition-delay": "2.35s"});
-    $('.info').hide(0).delay(3500).show(0);
+//    $('.info').hide(0).delay(3500).show(0);
+    $('.info').show(0);
 });
 
 $(document).ready(function(){
@@ -15,18 +16,19 @@ $(document).ready(function(){
         var y = e.pageY - this.offsetTop;
         $('#bubbles div').css({'margin-right': x*.005,'margin-top': -y*.005+2+"vh"});
         $('.title').css({'margin-right': x*.005,'margin-top': -y*.005+20+"vh"});
+//        $('.education-panel').css({'right': x*.01,'top': -y*.01});
         $('.jumbotron').css('background-position', -x*.05 + 'px ' + -y*.05 + 'px' );
         $('.subtitle').css({'margin-right': x});
   });
 });
 
-	var testing = function() {
-		var w1 = $("#bubbless").width();
-		var w2 = $(".bubble-contaisner").outerWidth();
-		console.log("w:"+w1);
-		console.log("inner:"+w2);
-        $("#bubbles").css({"margin-left": (w1-w2)/2});
-	}
+$(document).ready(function(){
+	$(".info-panel").mouseenter(function(e){
+		var x = e.pageX - this.offsetLeft;
+        var y = e.pageY - this.offsetTop;
+		  $(this).css('background-position', -x*.05 + 'px ' + -y*.05 + 'px' );
+		});
+	});
 
 	var getDocumentHeight = function() {
 		return ($(document).height());
@@ -48,19 +50,15 @@ $(document).ready(function(){
 	    }
 	}
 	
-	var test = function() {
+	var getSectionHeight = function() {
 		return (getDocumentHeight()/5);
 	}
-
-	
-	$(document).ready(testing);
-	$(window).resize(testing);
 	
 	$(document).ready(setSectionHeight);
 	$(window).resize(setSectionHeight);
 	
-	$(document).ready(test);
-	$(window).resize(test);
+	$(document).ready(getSectionHeight);
+	$(window).resize(getSectionHeight);
 
 	$(document).ready(getDocumentHeight);
 	$(window).resize(getDocumentHeight);
@@ -104,25 +102,22 @@ $(document).ready(function(){
 	
 	$(document).ready(adjustHeight);
 	$(window).resize(adjustHeight);	  */
-<!--
 
 	
-	var adjustWidth = function() {
-		var width = $(window).width();
-	    if(width < 560){
-	    	$(".navbar-nav").addClass("nav-small");
-	    	$('.navbar-nav p').hide();
-	    	$('.scroll-up').css("left", "80%");
-	    }
-	    else if(width > 560){
-	    	$(".navbar-nav").removeClass("nav-small");
-	    	$('.scroll-up').css("left", "90%");
-	    }
-	}
+//	var adjustWidth = function() {
+//		var width = $(window).width();
+//	    if(width < 560){
+//	    	$(".navbar-nav").addClass("nav-small");
+//	    	$('.navbar-nav p').hide();
+//	    	$('.scroll-up').css("left", "80%");
+//	    }
+//	    else if(width > 560){
+//	    	$(".navbar-nav").removeClass("nav-small");
+//	    	$('.scroll-up').css("left", "90%");
+//	    }
+//	}
 
-	$(".navbar-nav").ready(adjustWidth);
-	$(window).resize(adjustWidth);	  
-	-->
+
 	
 	//scroll up button
 	$(document).ready(function(){
@@ -188,30 +183,30 @@ $(document).ready(function(){
 	    	var c = 2.25;
 	    	var d = 3.25;
 	    }
-		if (currentScroll < (test()*.5)) {
+		if (currentScroll < (getSectionHeight()*.5)) {
 			$('.sidebar').css({"left": "-50px"});			
 		}
 
-		if (currentScroll > (test()*.5)) {
+		if (currentScroll > (getSectionHeight()*.5)) {
 			$('.sidebar').css({"left": "0px", "transition": ".5s"});
 			$('.sidebar a').each(function(i) {
 				  $(this).css('animation', "fade-in-right .7s ease forwards");
 				  $(this).css('animation-delay', .2*i+"s");
 			});
 		} 
-		if (currentScroll > (test()*a) && currentScroll < (test()*b)) {
+		if (currentScroll > (getSectionHeight()*a) && currentScroll < (getSectionHeight()*b)) {
 			$('.sidebar a').eq(0).css({"width": "80px"});
             $('.sidebar a:not(:nth-child(1))').css({ "width": "70px" });
         } 
-		if (currentScroll > (test()*b) && currentScroll < (test()*c)) {
+		if (currentScroll > (getSectionHeight()*b) && currentScroll < (getSectionHeight()*c)) {
 			$('.sidebar a').eq(1).css({"width": "80px"});
 			$('.sidebar a:not(:nth-child(2))').css({"width": "70px"});
 		}
-		if (currentScroll > (test()*c) && currentScroll < (test()*d)) {
+		if (currentScroll > (getSectionHeight()*c) && currentScroll < (getSectionHeight()*d)) {
 			$('.sidebar a').eq(2).css({"width": "80px"});
 			$('.sidebar a:not(:nth-child(3))').css({"width": "70px"});
 		}
-		if (currentScroll > (test()*d)) {
+		if (currentScroll > (getSectionHeight()*d)) {
 			$('.sidebar a').eq(3).css({"width": "80px"});
 			$('.sidebar a:not(:nth-child(4))').css({"width": "70px"});
 		}
@@ -234,37 +229,39 @@ $(document).ready(function(){
 	    	var c = 2.25;
 	    	var d = 3.25;
 	    }
-		if (currentScroll < (test()*a)) {
+		if (currentScroll < (getSectionHeight()*a)) {
 			console.log("top");
 			$('.nav-item').removeClass("nav-active");
             $('.skillbar .skillbar-bar').css({ "width": "0%", "transition": ".1s linear" });
 		} 
-		else if (currentScroll > (test()*a) && currentScroll < (test()*b)) {
+		else if (currentScroll > (getSectionHeight()*a) && currentScroll < (getSectionHeight()*b)) {
             console.log("ed");
-            $('.info-header').eq(0).css({"animation": "fade-in-up .5s forwards ease"});
-            $('.section-icon').eq(0).css({"animation": "fade-in-down .4s forwards ease"});           
-            $('.header-line').eq(0).css({"width": "70%", "transition":".7s ease .3s"});
-            $('.education-panel').css({"animation": "pulse2 3s infinite"});
+            $('.info-header').eq(0).css({"animation": "fade-in-up .5s ease forwards"});
+            $('.section-icon').eq(0).css({"animation": "fade-in-down .4s ease forwards"});           
+            $('.header-line').eq(0).css({"width": "10%", "transition":".7s ease .3s"});
+            $('.education-panel').css({"animation": "fade-in-up .5s ease-out .15s forwards"});
 			$('.sidebar a').eq(0).addClass("sidebar-active");
 			$('.sidebar a:not(:nth-child(1))').removeClass("sidebar-active");
 			$('.nav-item').eq(0).addClass("nav-active");
 			$('.nav-item:not(:nth-child(1))').removeClass("nav-active");			
 			$('.skillbar .skillbar-bar').css({"width":"0%", "transition":".1s linear"});
 		} 
-		else if (currentScroll > (test()*b) && currentScroll < (test()*c)) {
+		else if (currentScroll > (getSectionHeight()*b) && currentScroll < (getSectionHeight()*c)) {
             $('.info-header').eq(1).css({"animation": "fade-in-up .5s forwards ease"});
             $('.section-icon').eq(1).css({"animation": "fade-in-down .4s forwards ease"});           
-            $('.header-line').eq(1).css({"width": "70%", "transition":".7s ease .3s"});
+            $('.header-line').eq(1).css({"width": "10%", "transition":".7s ease .3s"});
+            $('.experience-panel').css({"animation": "fade-in-up .5s ease-out .15s forwards"});
 			$('.sidebar a').eq(1).addClass("sidebar-active");
 			$('.sidebar a:not(:nth-child(2))').removeClass("sidebar-active");			
 			$('.nav-item').eq(1).addClass("nav-active");
 			$('.nav-item:not(:nth-child(2))').removeClass("nav-active");
 //			$('.skillbar .skillbar-bar').css({"width":"0%","box-shadow": "none", "transition":".1s linear"});
 		}
-		else if (currentScroll > (test()*c) && currentScroll < (test()*d)) {
+		else if (currentScroll > (getSectionHeight()*c) && currentScroll < (getSectionHeight()*d)) {
             $('.info-header').eq(2).css({"animation": "fade-in-up .5s forwards ease"});
             $('.section-icon').eq(2).css({"animation": "fade-in-down .4s forwards ease"});           
-            $('.header-line').eq(2).css({"width": "70%", "transition":".7s ease .3s"});
+            $('.header-line').eq(2).css({"width": "10%", "transition":".7s ease .3s"});
+            $('.skills-panel').css({"animation": "fade-in-up .5s ease-out .15s forwards"});
 			$('.sidebar a').eq(2).addClass("sidebar-active");
 			$('.sidebar a:not(:nth-child(3))').removeClass("sidebar-active");
 			$('.nav-item').eq(2).addClass("nav-active");
@@ -281,10 +278,11 @@ $(document).ready(function(){
 			$('.skillbar .skillbar-bar').eq(5).css({"width":"100%", "box-shadow": "0 0 2px 2px #F2B103", "transition":".5s ease-in 1.2s"});
 			$('.skillbar .skillbar-bar').eq(6).css({"width":"80%", "box-shadow": "0 0 2px 2px #F2B103", "transition":".5s ease-in 1.4s"});
 		}
-		else if (currentScroll > (test()*d)) {
+		else if (currentScroll > (getSectionHeight()*d)) {
             $('.info-header').eq(3).css({"animation": "fade-in-up .5s forwards ease"});
             $('.section-icon').eq(3).css({"animation": "fade-in-down .4s forwards ease"});           
-            $('.header-line').eq(3).css({"width": "70%", "transition":".7s ease .3s"});
+            $('.header-line').eq(3).css({"width": "10%", "transition":".7s ease .3s"});
+            $('.portfolio-panel').css({"animation": "fade-in-up .5s ease-out .15s forwards"});
 			$('.sidebar a').eq(3).addClass("sidebar-active");
 			$('.sidebar a:not(:nth-child(4))').removeClass("sidebar-active");
 			$('.nav-item').eq(3).addClass("nav-active");
@@ -310,25 +308,25 @@ $(document).scroll(function () {
         var c = 2.6;
         var d = 3.6;
     }
-    if (currentScroll > (test() * 0.6)) {
+    if (currentScroll > (getSectionHeight() * 0.6)) {
         $('.education-panel-child:nth-child(1)').addClass("section-active");
     }
     
-    if (currentScroll > (test() * 0.7)) {
+    if (currentScroll > (getSectionHeight() * 0.7)) {
         $('.education-panel-child:nth-child(2)').addClass("section-active");
     }
-    if (currentScroll > (test() * 0.8)) {
+    if (currentScroll > (getSectionHeight() * 0.8)) {
         $('.education-panel-child:nth-child(3)').addClass("section-active");
     }
-    if (currentScroll > (test() * 1.7)) {
+    if (currentScroll > (getSectionHeight() * 1.7)) {
         console.log("ed-sec");
         $('.experience-panel-child:nth-child(1)').addClass("section-active");
     }
-    if (currentScroll > (test() * 1.8)) {
+    if (currentScroll > (getSectionHeight() * 1.8)) {
         console.log("ed-sec");
         $('.experience-panel-child:nth-child(2)').addClass("section-active");
     }
-    if (currentScroll > (test() * 1.9)) {
+    if (currentScroll > (getSectionHeight() * 1.9)) {
         console.log("ed-sec");
         $('.experience-panel-child:nth-child(3)').addClass("section-active");
     }
@@ -336,7 +334,7 @@ $(document).scroll(function () {
 
 
     /*
-    else if (currentScroll > (test() * a) && currentScroll < (test() * b)) {
+    else if (currentScroll > (getSectionHeight() * a) && currentScroll < (getSectionHeight() * b)) {
         console.log("ed");
         parallaxScroll1();
         $('.info-section h1').eq(0).addClass("entry-right");
@@ -346,7 +344,7 @@ $(document).scroll(function () {
         $('.nav-item:not(:nth-child(1))').removeClass("nav-active");
         $('.skillbar .skillbar-bar').css({ "width": "0%", "transition": ".1s linear" });
     }
-    else if (currentScroll > (test() * b) && currentScroll < (test() * c)) {
+    else if (currentScroll > (getSectionHeight() * b) && currentScroll < (getSectionHeight() * c)) {
         console.log("work");
         parallaxScroll2();
         $('.info-section h1').eq(1).addClass("entry-right");
@@ -356,7 +354,7 @@ $(document).scroll(function () {
         $('.nav-item:not(:nth-child(2))').removeClass("nav-active");
         $('.skillbar .skillbar-bar').css({ "width": "0%", "transition": ".1s linear" });
     }
-    else if (currentScroll > (test() * c) && currentScroll < (test() * d)) {
+    else if (currentScroll > (getSectionHeight() * c) && currentScroll < (getSectionHeight() * d)) {
         console.log("sk");
         parallaxScroll3();
         $('.info-section h1').eq(2).addClass("entry-right");
@@ -366,7 +364,7 @@ $(document).scroll(function () {
         $('.nav-item:not(:nth-child(3))').removeClass("nav-active");
         $('.skillbar .skillbar-bar').css({ "width": "80%", "transition": "1s ease-in" });
     }
-    else if (currentScroll > (test() * d)) {
+    else if (currentScroll > (getSectionHeight() * d)) {
         console.log("port");
         parallaxScroll4();
         $('.info-section h1').eq(3).addClass("entry-right");
@@ -491,26 +489,26 @@ $(document).scroll(function () {
     });
 
 //function parallaxScroll1() {
-//	var scrolled = $(window).scrollTop() + test()*.4;
+//	var scrolled = $(window).scrollTop() + getSectionHeight()*.4;
 //    console.log("1:"+scrolled);
 //    $('.info-section h1').eq(0).css({ "margin-top": (0 - (scrolled * .5)) + 'px',  "opacity": "1" });
 //}
 //function parallaxScroll2() {
-//    var scrolled = $(window).scrollTop() - test()*.6;
+//    var scrolled = $(window).scrollTop() - getSectionHeight()*.6;
 //    console.log("2:"+scrolled);
 //    $('.info-section h1').eq(0).css({ "opacity": "0" });
 //    $('.info-section h1').eq(1).css({ "margin-top": (0 - (scrolled * .5)) + 'px',  "opacity": "1" });
 //}
 //
 //function parallaxScroll3() {
-//    var scrolled = $(window).scrollTop() - test() * 1.6;
+//    var scrolled = $(window).scrollTop() - getSectionHeight() * 1.6;
 //    console.log(scrolled);
 //    $('.info-section h1').eq(1).css({ "opacity": "0" });
 //    $('.info-section h1').eq(2).css({ "margin-top": (0 - (scrolled * .5)) + 'px',  "opacity": "1" });
 //}
 //
 //function parallaxScroll4() {
-//    var scrolled = $(window).scrollTop() - test() * 3.25;
+//    var scrolled = $(window).scrollTop() - getSectionHeight() * 3.25;
 //    console.log(scrolled);
 //    $('.info-section h1').eq(2).css({ "opacity": "0" });
 //    $('.info-section h1').eq(3).css({ "margin-top": (0 - (scrolled * .5)) + 'px',  "opacity": "1" });

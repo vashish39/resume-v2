@@ -1,8 +1,10 @@
 @import url(https://fonts.googleapis.com/css?family=Fjalla+One);
-
+@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web:900&display=swap');
 
 body {	
-	opacity: .5 !important;
+	opacity: .1 !important;
 	line-height: 1;
 	}
 	
@@ -17,7 +19,6 @@ q:before, q:after {
 	content: '';
 	content: none;
 }
-
 .container-fluid{
 	overflow: hidden;
 	margin: 0px !important;
@@ -316,13 +317,14 @@ q:before, q:after {
 }
 
 .header-line{
-	position: absolute;
-	height: 2px;
+	position: relative;
+	height: 15px;
 	width: 0%;
-	top: 67px;
-	margin: 10px auto;
+	margin: auto;
+	border-radius: 10px;
 	z-index: 1;
 	right: 0;
+	top: -10px;
 	left: 0;
 }
 
@@ -424,7 +426,7 @@ q:before, q:after {
     z-index: 2;
    	background-color: #D2E3FC;
     position: relative;
-    font-family: 'Patua One', cursive;
+    font-family: 'Titillium Web', sans-serif;
     display: inline-block;
     opacity: 0;
     padding: 0px 10px;
@@ -446,11 +448,11 @@ q:before, q:after {
 
 .exp-section h4{
 	text-align: left;
-	font-family: 'Patua One', cursive;
+	font-family: 'Quicksand', sans-serif;
 }
 
 .exp-section h5{
-	font-family: 'Roboto Slab', serif;
+	font-family: 'Quicksand', sans-serif;
 	text-align: left;
 }
 
@@ -495,7 +497,7 @@ q:before, q:after {
 	top: 10px;
     background: black;
 	color: white;
-	font-family: 'Roboto Slab', serif;
+	font-family: 'Quicksand', sans-serif;
     text-align: center;
 }
 
@@ -612,7 +614,7 @@ q:before, q:after {
 	background: black;
 	color: white;
 	padding: 3px 9px;
-	font-family: 'Roboto Slab', serif;
+	font-family: 'Quicksand', sans-serif;
     text-align: center;
 }
 
@@ -649,9 +651,10 @@ q:before, q:after {
 }
 
 .education-panel {
-    transition: all 0.2s ease;
+	opacity: 0;
     border-radius: 20px;
     padding: 20px;
+    margin-top: 20px;
     position: relative;
     background-color: aliceblue;
     box-shadow: 0 0 8px 10px #c9dcfc;
@@ -660,7 +663,8 @@ q:before, q:after {
 .education-panel-child{
 	padding: 10px 20px;
 	margin: 10px;
-	overflow: hidden;	
+	overflow: hidden;
+	
 }
 
 .edu-divider{
@@ -694,6 +698,7 @@ q:before, q:after {
 
 .exp-details{
 	opacity: 0;
+	font-family: 'Quicksand', sans-serif;
 }
 
 .section-active .year span{
@@ -740,6 +745,7 @@ q:before, q:after {
     position: relative;
     background-color: #edf8f0;
     box-shadow: 0 0 8px 10px #bbe3c6;
+    margin-top: 20px;
 }
 
 .experience-panel-child{
@@ -763,6 +769,7 @@ q:before, q:after {
     position: relative;
     background-color: #fffdf4;
     box-shadow: 0 0 8px 10px #ffe6a4;
+    margin-top: 20px;
 }
 
 .skills-panel-child{
@@ -773,6 +780,7 @@ q:before, q:after {
 }
 
 .portfolio-panel {
+	margin-top: 20px;
     transition: all 0.2s ease;
     border-radius: 20px;
     padding: 20px;
