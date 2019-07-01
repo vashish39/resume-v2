@@ -113,9 +113,7 @@ q:before, q:after {
 }
 
 .title {
-    font-size: 8em !important;
-    z-index: 1 !important;
-    margin-top: 25vh;
+    z-index: 1 !important;    
     font-family: 'Titillium Web', sans-serif;
     text-align: center;
     opacity: 0;
@@ -129,6 +127,52 @@ q:before, q:after {
     opacity: 0;
     animation: fade-in-up .6s ease 3.5s forwards;
 }
+
+@media only screen and (min-width: 769px) {
+  .title {
+  	margin-top: 25vh;
+    font-size: 8em !important;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .title {
+  	line-height: 70px;
+  	margin-top: 10vh;
+    font-size: 5em !important;
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  #bubbles a {
+  	padding: 40px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #bubbles a {
+  	padding: 20px;
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  #bubbles div {
+  	margin: 0px 25px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #bubbles div {
+  	margin: 0px 40px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .sub-title {
+    font-size: 1.2em !important;
+  }
+}
+
 
 .bigb{
 	background-color: red;
@@ -164,8 +208,7 @@ q:before, q:after {
 #bubbles div{
 	opacity: 0;
 	display: inline-block;
-	border-radius: 50%;   
-	margin: 25px;
+	border-radius: 50%;
 	animation: fade-in-up .5s forwards;
 }
 
@@ -178,7 +221,6 @@ q:before, q:after {
 
 #bubbles a{
 	z-index: -1;
-	padding: 40px !important;
 	text-align: center;
 	border-radius: 50%;
 	transition: 0.5s ease;

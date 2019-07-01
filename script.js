@@ -14,11 +14,19 @@ $(document).ready(function(){
   $('html').mousemove(function(e){
         var x = e.pageX - this.offsetLeft;
         var y = e.pageY - this.offsetTop;
-        $('#bubbles div').css({'margin-right': x*.005,'margin-top': -y*.005+2+"vh"});
-        $('.title').css({'margin-right': x*.005,'margin-top': -y*.005+25+"vh"});
+        var width = $(window).width();
+        
 //        $('.education-panel').css({'right': x*.01,'top': -y*.01});
         $('.jumbotron').css('background-position', -x*.05 + 'px ' + -y*.05 + 'px' );
         $('.subtitle').css({'margin-right': x});
+        if(width > 768){
+        	$('#bubbles div').css({'margin-right': x*.005,'margin-top': -y*.005+2+"vh"});
+        	 $('.title').css({'margin-right': x*.005,'margin-top': -y*.005+25+"vh"});
+	    }
+	    else if(width < 768){
+	    	 $('.title').css({'margin-right': x*.005,'margin-top': -y*.005+10+"vh"});
+	    }
+
   });
 });
 
@@ -39,9 +47,13 @@ $(document).ready(function(){
 	var setSectionHeight = function() {
 		var width = $(window).width();
 	    if(width > 768){
+	    	$(".jumbotron").css({"height": "100vh"});
+	    	$(".title").css({"font-size": "8em"});
 		    $(".info-section").css({"height": "100vh"});
 	    }
 	    else if(width < 768){
+//	    	$(".jumbotron").css({"height": "150vh"});
+	    	$(".title").css({"font-size": "5em"});
 	    	$(".info-section").eq(0).css({"height": "150vh"});
 	    	$(".info-section").eq(1).css({"height": "200vh"});
 	    	$(".info-section").eq(2).css({"height": "100vh"});
