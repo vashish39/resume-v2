@@ -26,7 +26,7 @@ $(document).ready(function(){
 	    else if(width < 768){
 	    	 $('.title').css({'margin-right': x*.005,'margin-top': "50px"});
 	    }
-  });
+  	});
 });
 
 $(document).ready(function(){
