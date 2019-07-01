@@ -24,7 +24,7 @@ $(document).ready(function(){
         	$('.title').css({'margin-right': x*.005,'margin-top': -y*.005+25+"vh"});
 	    }
 	    else if(width < 768){
-	    	 $('.title').css({'margin-right': x*.005,'margin-top': y*.1+"vh"});
+	    	 $('.title').css({'margin-right': x*.005,'margin-top': "50px"});
 	    }
   });
 });
@@ -58,6 +58,8 @@ $(document).ready(function(){
 	    	$(".info-section").eq(2).css({"height": "100vh"});
 	    	$(".info-section").eq(3).css({"height": "100vh"});
 	    	$(".info-section h1").css({"font-size": "3em"});
+	    	$(".education-panel, .experience-panel, .skills-panel, .portfolio-panel").css({"width":"90%", "margin": "0px auto"});
+	    	
 	    }
 	}
 	
@@ -187,12 +189,16 @@ $(document).ready(function(){
 	    	var b = 1.6;
 	    	var c = 2.6;
 	    	var d = 3.6;
+	    	var peekin = 45;
+	    	var peekout = 30;
 	    }
 	    else if (width > 768) {
 	    	var a = 0.3;
 	    	var b = 1.5;
 	    	var c = 2.25;
 	    	var d = 3.25;
+	    	var peekin = 80;
+	    	var peekout = 60;
 	    }
 		if (currentScroll < (getSectionHeight()*.5)) {
 			$('.sidebar').css({"left": "-50px"});			
@@ -206,20 +212,20 @@ $(document).ready(function(){
 			});
 		} 
 		if (currentScroll > (getSectionHeight()*a) && currentScroll < (getSectionHeight()*b)) {
-			$('.sidebar a').eq(0).css({"width": "80px"});
-            $('.sidebar a:not(:nth-child(1))').css({ "width": "70px" });
+			$('.sidebar a').eq(0).css({"width": peekin+"px"});
+            $('.sidebar a:not(:nth-child(1))').css({"width": peekout+"px"});
         } 
 		if (currentScroll > (getSectionHeight()*b) && currentScroll < (getSectionHeight()*c)) {
-			$('.sidebar a').eq(1).css({"width": "80px"});
-			$('.sidebar a:not(:nth-child(2))').css({"width": "70px"});
+			$('.sidebar a').eq(1).css({"width": peekin+"px"});
+			$('.sidebar a:not(:nth-child(2))').css({"width": peekout+"px"});
 		}
 		if (currentScroll > (getSectionHeight()*c) && currentScroll < (getSectionHeight()*d)) {
-			$('.sidebar a').eq(2).css({"width": "80px"});
-			$('.sidebar a:not(:nth-child(3))').css({"width": "70px"});
+			$('.sidebar a').eq(2).css({"width": peekin+"px"});
+			$('.sidebar a:not(:nth-child(3))').css({"width": peekout+"px"});
 		}
 		if (currentScroll > (getSectionHeight()*d)) {
-			$('.sidebar a').eq(3).css({"width": "80px"});
-			$('.sidebar a:not(:nth-child(4))').css({"width": "70px"});
+			$('.sidebar a').eq(3).css({"width": peekin+"px"});
+			$('.sidebar a:not(:nth-child(4))').css({"width": peekout+"px"});
 		}
     });
     
