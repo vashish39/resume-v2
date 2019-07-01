@@ -49,10 +49,11 @@ $(document).ready(function(){
 	    	$(".jumbotron").css({"height": "100vh"});
 	    	$(".title").css({"font-size": "8em"});
 		    $(".info-section").css({"height": "100vh"});
+		    $('.scroll-up').css("left", "90%");
 	    }
 	    else if(width < 768){
-//	    	$(".jumbotron").css({"height": "150vh"});
 	    	$(".title").css({"font-size": "5em"});
+	    	$('.scroll-up').css("left", "80%");
 	    	$(".info-section").eq(0).css({"height": "150vh"});
 	    	$(".info-section").eq(1).css({"height": "200vh"});
 	    	$(".info-section").eq(2).css({"height": "100vh"});
@@ -136,12 +137,10 @@ $(document).ready(function(){
 	$(document).ready(function(){
 		$('.scroll-up').click(() => {
 			var width = $(window).width();
-		    if(width < 560){
-		    	$('.scroll-up').css("left", "85%");
+		    if(width < 560){		    	
 		    	$('html, body').animate({scrollTop: $('.jumbotron').offset().top -0}, 500);
 		    }
-		    else if(width > 560){		    	
-		    	$('.scroll-up').css("left", "94%");
+		    else if(width > 560){
 		    	$('html, body').animate({scrollTop: $('.jumbotron').offset().top -0}, 500);		    	
 		    }		    
 		});
