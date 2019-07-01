@@ -4,7 +4,7 @@
 @import url('https://fonts.googleapis.com/css?family=Titillium+Web:900&display=swap');
 
 body {	
-	opacity: 1 !important;
+	opacity: .1 !important;
 	line-height: 1;
 	}
 	
@@ -156,14 +156,26 @@ q:before, q:after {
 }
 
 @media only screen and (min-width: 769px) {
+  #bubbles p {
+  	font-size: 1.1em !important;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #bubbles p {
+  	font-size: 1em !important;
+  }
+}
+
+@media only screen and (min-width: 769px) {
   #bubbles div {
   	margin: 0px 25px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 668px) {
   #bubbles div {
-  	margin: 0px 40px;
+  	margin: 0px 30px;
   }
 }
 
@@ -198,7 +210,6 @@ q:before, q:after {
 #bubbles p {
     margin-top: 10px;
     opacity:.7;
-    font-size: 1.1em !important;
     font-family: 'Patua One', cursive;
     text-align: center;
     position: relative;

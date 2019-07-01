@@ -21,12 +21,11 @@ $(document).ready(function(){
         $('.subtitle').css({'margin-right': x});
         if(width > 768){
         	$('#bubbles div').css({'margin-right': x*.005,'margin-top': -y*.005+2+"vh"});
-        	 $('.title').css({'margin-right': x*.005,'margin-top': -y*.005+25+"vh"});
+        	$('.title').css({'margin-right': x*.005,'margin-top': -y*.005+25+"vh"});
 	    }
 	    else if(width < 768){
-	    	 $('.title').css({'margin-right': x*.005,'margin-top': -y*.005+10+"vh"});
+	    	 $('.title').css({'margin-right': x*.005,'margin-top': y*.1+"vh"});
 	    }
-
   });
 });
 
