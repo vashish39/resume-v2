@@ -58,7 +58,7 @@ $(document).ready(function(){
 	    	$(".info-section").eq(2).css({"height": "100vh"});
 	    	$(".info-section").eq(3).css({"height": "100vh"});
 	    	$(".info-section h1").css({"font-size": "3em"});
-	    	$(".education-panel, .experience-panel, .skills-panel, .portfolio-panel").css({"width":"90%", "margin": "0px auto"});
+	    	$(".education-panel, .experience-panel, .skills-panel, .portfolio-panel").css({"width":"98%", "margin": "0px auto"});
 	    	
 	    }
 	}
