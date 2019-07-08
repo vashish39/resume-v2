@@ -424,9 +424,7 @@ body {
 
 .education-panel-child{
 	padding: 10px 20px;
-	margin: 10px;
-	overflow: hidden;
-	
+	overflow: hidden;	
 }
 
 .edu-divider{
@@ -496,7 +494,6 @@ body {
 .experience-panel-child{
 	opacity: 1;
 	padding: 10px 20px;
-	margin: 10px;
 	overflow: hidden;	
 }
 
