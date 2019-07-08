@@ -31,7 +31,7 @@ var getSectionHeight = function() {
 $(document).ready(function(){
 	$('.entry-blocks h1').css({"animation": "fade-inout 3s ease forwards .5s"});
 	$('.entry-blocks h1').delay(3500).hide(0);
-    $('.info').hide(0).delay(3500).show(0);
+//    $('.info').hide(0).delay(3500).show(0);
     $('.info').show(0);
     $('html').mousemove(function(e){
         var x = e.pageX - this.offsetLeft;
@@ -131,9 +131,9 @@ $(window).bind("load resize scroll", function (e) {
 	console.log(currentScroll);
     if (width < 768) {
     	var a = 0.5;
-    	var b = 1.6;
-    	var c = 2.6;
-    	var d = 3.6;
+    	var b = 1.4;
+    	var c = 2.5;
+    	var d = 3.5;
     }
     else if (width > 768) {
     	var a = 0.3;
@@ -154,6 +154,7 @@ $(window).bind("load resize scroll", function (e) {
 		$('.skillbar .skillbar-bar').css({"width":"0%", "transition":".1s linear"});
 	} 
 	else if (currentScroll > (getSectionHeight()*b) && currentScroll < (getSectionHeight()*c)) {
+		console.log("f")
         $('.info-header').eq(1).css({"animation": "fade-in-up .5s forwards ease"});    
         $('.header-line').eq(1).css({"width": "10%", "transition":".7s ease .3s"});
         $('.experience-panel').css({"animation": "fade-in-up .5s ease-out .15s forwards"});
@@ -194,47 +195,58 @@ $(document).scroll(function () {
     var width = $(window).width();
     var currentScroll = $(this).scrollTop();
     console.log(currentScroll);
+    console.log("s:"+getSectionHeight());
     if (width < 768) {
-        var a = 0.5;
-        var b = 1.6;
-        var c = 2.6;
-        var d = 3.6;
+        if (currentScroll > (getSectionHeight() * 0.5)) {
+            $('.education-panel-child:nth-child(1)').addClass("section-active");
+        }    
+        if (currentScroll > (getSectionHeight() * 0.6)) {
+            $('.education-panel-child:nth-child(2)').addClass("section-active");
+        }
+        if (currentScroll > (getSectionHeight() * 0.7)) {
+            $('.education-panel-child:nth-child(3)').addClass("section-active");
+        }
+        if (currentScroll > (getSectionHeight() * 1.4)) {
+        	console.log("d");
+            $('.experience-panel-child:nth-child(1)').addClass("section-active");
+        }
+        if (currentScroll > (getSectionHeight() * 1.55)) {
+            $('.experience-panel-child:nth-child(2)').addClass("section-active");
+        }
+        if (currentScroll > (getSectionHeight() * 1.7)) {
+            $('.experience-panel-child:nth-child(3)').addClass("section-active");
+        }
     }
-    else if (width > 768) {
-        var a = 0.5;
-        var b = 1.6;
-        var c = 2.6;
-        var d = 3.6;
-    }
-    if (currentScroll > (getSectionHeight() * 0.6)) {
-        $('.education-panel-child:nth-child(1)').addClass("section-active");
-    }
+        
     
-    if (currentScroll > (getSectionHeight() * 0.7)) {
-        $('.education-panel-child:nth-child(2)').addClass("section-active");
-    }
-    if (currentScroll > (getSectionHeight() * 0.8)) {
-        $('.education-panel-child:nth-child(3)').addClass("section-active");
-    }
-    if (currentScroll > (getSectionHeight() * 1.7)) {
-        console.log("ed-sec");
-        $('.experience-panel-child:nth-child(1)').addClass("section-active");
-    }
-    if (currentScroll > (getSectionHeight() * 1.8)) {
-        console.log("ed-sec");
-        $('.experience-panel-child:nth-child(2)').addClass("section-active");
-    }
-    if (currentScroll > (getSectionHeight() * 1.9)) {
-        console.log("ed-sec");
-        $('.experience-panel-child:nth-child(3)').addClass("section-active");
+    if (width > 768) {
+        if (currentScroll > (getSectionHeight() * 0.5)) {
+            $('.education-panel-child:nth-child(1)').addClass("section-active");
+        }    
+        if (currentScroll > (getSectionHeight() * 0.6)) {
+            $('.education-panel-child:nth-child(2)').addClass("section-active");
+        }
+        if (currentScroll > (getSectionHeight() * 0.7)) {
+            $('.education-panel-child:nth-child(3)').addClass("section-active");
+        }
+        if (currentScroll > (getSectionHeight() * 1.55)) {
+            $('.experience-panel-child:nth-child(1)').addClass("section-active");
+        }
+        if (currentScroll > (getSectionHeight() * 1.65)) {
+            $('.experience-panel-child:nth-child(2)').addClass("section-active");
+        }
+        if (currentScroll > (getSectionHeight() * 1.75)) {
+            $('.experience-panel-child:nth-child(3)').addClass("section-active");
+        }
     }
 });
+
 // main menu click	
 $(document).ready(function(){
 	$('.nav-item').eq(0).click(function(){
 		var width = $(window).width();
 	    if(width < 560){
-	    	$('html, body').animate({scrollTop: $('.info-section').eq(0).offset().top -75}, 500);
+	    	$('html, body').animate({scrollTop: $('.info-section').eq(0).offset().top -0}, 500);
 	    }
 	    else if(width > 560){
 	    	$('html, body').animate({scrollTop: $('.info-section').eq(0).offset().top -0}, 500);
@@ -246,7 +258,7 @@ $(document).ready(function(){
 	$('.nav-item').eq(1).click(function(){
 		var width = $(window).width();
 	    if(width < 560){
-	    	$('html, body').animate({scrollTop: $('.info-section').eq(1).offset().top -75}, 500);
+	    	$('html, body').animate({scrollTop: $('.info-section').eq(1).offset().top -0}, 500);
 	    }
 	    else if(width > 560){
 	    	$('html, body').animate({scrollTop: $('.info-section').eq(1).offset().top -0}, 500);
@@ -259,7 +271,7 @@ $(document).ready(function(){
 		var width = $(window).width();
 	    if(width < 560){
 	    	$('html, body').animate({
-		        scrollTop: $('.info-section').eq(2).offset().top -75
+		        scrollTop: $('.info-section').eq(2).offset().top -0
 		    }, 500, function(){
 		    	jQuery('.skillbar').each(function(){
 		    		jQuery(this).removeAttr('data-final');
@@ -282,7 +294,7 @@ $(document).ready(function(){
 	$('.nav-item').eq(3).click(function(){
 		var width = $(window).width();
 	    if(width < 560){
-	    	$('html, body').animate({scrollTop: $('.info-section').eq(3).offset().top -75}, 500);
+	    	$('html, body').animate({scrollTop: $('.info-section').eq(3).offset().top -0}, 500);
 	    }
 	    else if(width > 560){
 	    	$('html, body').animate({scrollTop: $('.info-section').eq(3).offset().top -0}, 500);
@@ -294,7 +306,7 @@ $(document).ready(function(){
 	$('.sidebar a').eq(0).click(function(){
 		var width = $(window).width();
 	    if(width < 560){
-	    	$('html, body').animate({scrollTop: $('.info-section').eq(0).offset().top -75}, 500);
+	    	$('html, body').animate({scrollTop: $('.info-section').eq(0).offset().top -0}, 500);
 	    }
 	    else if(width > 560){
 	    	$('html, body').animate({scrollTop: $('.info-section').eq(0).offset().top -0}, 500);
@@ -306,7 +318,7 @@ $(document).ready(function(){
 	$('.sidebar a').eq(1).click(function(){
 		var width = $(window).width();
 	    if(width < 560){
-	    	$('html, body').animate({scrollTop: $('.info-section').eq(1).offset().top -75}, 500);
+	    	$('html, body').animate({scrollTop: $('.info-section').eq(1).offset().top -0}, 500);
 	    }
 	    else if(width > 560){
 	    	$('html, body').animate({scrollTop: $('.info-section').eq(1).offset().top -0}, 500);
@@ -318,7 +330,7 @@ $(document).ready(function(){
 	$('.sidebar a').eq(2).click(function(){
 		var width = $(window).width();
 	    if(width < 560){
-	    	$('html, body').animate({scrollTop: $('.info-section').eq(2).offset().top -75}, 500);
+	    	$('html, body').animate({scrollTop: $('.info-section').eq(2).offset().top -0}, 500);
 	    }
 	    else if(width > 560){
 	    	$('html, body').animate({scrollTop: $('.info-section').eq(2).offset().top -0}, 500);
@@ -330,7 +342,7 @@ $(document).ready(function(){
 	$('.sidebar a').eq(3).click(function(){
 		var width = $(window).width();
 	    if(width < 560){
-	    	$('html, body').animate({scrollTop: $('.info-section').eq(3).offset().top -75}, 500);
+	    	$('html, body').animate({scrollTop: $('.info-section').eq(3).offset().top -0}, 500);
 	    }
 	    else if(width > 560){
 	    	$('html, body').animate({scrollTop: $('.info-section').eq(3).offset().top -0}, 500);

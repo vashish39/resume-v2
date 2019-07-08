@@ -471,11 +471,11 @@ body {
 }
 
 .section-active .exp-year span{
-    animation: fade-in-right .5s ease-out .1s forwards;
+    animation: fade-in-right-span .3s ease-out .2s forwards;
 }
 
 .section-active .position{
-    animation: fade-in-right .5s ease-out .2s forwards;
+    animation: fade-in-right .5s ease-out .1s forwards;
 }
 
 .section-active .exp-details{
@@ -485,7 +485,6 @@ body {
 
 .experience-panel {
 	opacity:0;
-    transition: all 0.2s ease;
     border-radius: 20px;
     padding: 20px;
     position: relative;
@@ -724,7 +723,16 @@ body {
   }
 }
 
-
+@keyframes fade-in-right-span {
+  0%   {
+    opacity: 0;
+    margin-left: -15px;
+  }
+  100% {
+  	opacity: 1;
+    margin-left: 0px;
+  }
+}
 
 @keyframes fade-in-right {
   0%   {
@@ -825,6 +833,18 @@ body {
 @media only screen and (max-width: 768px) {
   #bubbles p {
   	font-size: 1em !important;
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  .entry-blocks h1 {
+  	font-size: 8em !important;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .entry-blocks h1 {
+  	font-size: 5em !important;
   }
 }
 
