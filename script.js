@@ -81,9 +81,9 @@ $(window).bind("load resize scroll", function (e) {
 	console.log(currentScroll);
     if (width < 768) {
     	var a = 0.5;
-    	var b = 1.6;
-    	var c = 2.6;
-    	var d = 3.6;
+    	var b = 1.4;
+    	var c = 2.5;
+    	var d = 3.5;
     	var peekin = 45;
     	var peekout = 30;
     }
