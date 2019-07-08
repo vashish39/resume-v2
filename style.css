@@ -574,11 +574,7 @@ q:before, q:after {
 	opacity: .5;
 }
 
-#portfolio .row img{
-	padding: 10px;
-	margin: 10px;
-	max-width: 250px;
-}
+
 
 .profile{
 	opacity: 0;
@@ -860,4 +856,93 @@ q:before, q:after {
     100% {
         transform: translatex(100px) translatey(100px);
     }
+}
+
+.portfolio-content{
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+	margin: 0px auto;
+	width: 100%;
+	
+}
+.portfolio-content li{
+	padding: 0px;
+	overflow: hidden;
+	padding: 10px;
+	min-width:350px;
+	margin: 0px auto;
+}
+.portfolio-content li:hover .caption{
+	opacity: 1;
+	transform: translateY(-100px);
+	-webkit-transform:translateY(-100px);
+	-moz-transform:translateY(-100px);
+	-ms-transform:translateY(-100px);
+	-o-transform:translateY(-100px);
+}
+.portfolio-content li:hover img{
+	opacity: 1;
+	transform: translateY(-40px);
+	-webkit-transform:translateY(-40px);
+	-moz-transform:translateY(-40px);
+	-ms-transform:translateY(-40px);
+	-o-transform:translateY(-40px);
+	cursor: pointer;
+}
+.portfolio-content img{
+	margin: 0px;
+	padding: 0px;
+	float: left;
+	z-index: 0;
+}
+.portfolio-content .caption{
+	cursor: pointer;
+	position: absolute;
+	opacity: 0;
+	top:300px;
+	-webkit-transition:all 0.15s ease-in-out;
+	-moz-transition:all 0.15s ease-in-out;
+	-o-transition:all 0.15s ease-in-out;
+	-ms-transition:all 0.15s ease-in-out;
+	transition:all 0.15s ease-in-out;
+}
+.portfolio-content img{
+	-webkit-transition:all 0.15s ease-in-out;
+	-moz-transition:all 0.15s ease-in-out;
+	-o-transition:all 0.15s ease-in-out;
+	-ms-transition:all 0.15s ease-in-out;
+	transition:all 0.15s ease-in-out;
+}
+.portfolio-content .blur{
+	background-color: rgb(239, 119, 109);
+	height: 300px;
+	width: 300px;
+	z-index: 5;
+	position: absolute;
+	top: -60px;
+}
+.portfolio-content .caption-text h1{
+	text-transform: uppercase;
+	font-size: 18px;
+}
+.portfolio-content .caption-text{
+	z-index: 10;
+	color: #fff;
+	position: absolute;
+	width: 300px;
+	height: 300px;
+	text-align: center;
+	top:-45px;
+	margin: 0px auto;
+}
+
+#portfolio img{
+	max-width: 350px;
+	margin: 0 auto;
+	width: 100%;
+}
+
+#portfolio .row{
+	margin: 10px auto;
 }
