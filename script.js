@@ -35,7 +35,7 @@ var getSectionHeight = function() {
 $(document).ready(function(){
 	$('.entry-blocks h1').css({"animation": "fade-inout 3s ease forwards .5s"});
 	$('.entry-blocks h1').delay(3500).hide(0);
-    $('.info').hide(0).delay(3500).show(0);
+//    $('.info').hide(0).delay(3500).show(0);
     $('.info').show(0);
     $('html').mousemove(function(e){
         var x = e.pageX - this.offsetLeft;
@@ -134,16 +134,16 @@ $(window).bind("load resize scroll", function (e) {
 	var currentScroll = $(this).scrollTop();
 	console.log(currentScroll);
     if (width < 768) {
-    	var a = 0.5;
-    	var b = 1.4;
+    	var a = 0.3;
+    	var b = 1.3;
     	var c = 2.5;
-    	var d = 3.5;
+    	var d = 3.3;
     }
     else if (width > 768) {
     	var a = 0.3;
     	var b = 1.5;
-    	var c = 2.25;
-    	var d = 3.25;
+    	var c = 2.6;
+    	var d = 3.5;
     }
 	if (currentScroll < (getSectionHeight()*a)) {
 		$('.nav-item').removeClass("nav-active");
@@ -190,7 +190,11 @@ $(window).bind("load resize scroll", function (e) {
         $('.portfolio-panel').css({"animation": "fade-in-up .5s ease-out .15s forwards"});
 		$('.nav-item').eq(3).addClass("nav-active");
 		$('.nav-item:not(:nth-child(4))').removeClass("nav-active");
-//			$('.skillbar .skillbar-bar').css({"width":"0%", "transition":".1s linear"});
+		$('.portfolio-content li').each(function(i) {
+			  $(this).css('animation', "fade-in-up .5s ease forwards");
+			  $(this).css('animation-delay', .2*i+"s");
+		});		
+//		$('.skillbar .skillbar-bar').css({"width":"0%", "transition":".1s linear"});
 	}
 });
 
@@ -201,20 +205,20 @@ $(document).scroll(function () {
     console.log(currentScroll);
     console.log("s:"+getSectionHeight());
     if (width < 768) {
-        if (currentScroll > (getSectionHeight() * 0.5)) {
+        if (currentScroll > (getSectionHeight() * 0.3)) {
             $('.education-panel-child:nth-child(1)').addClass("section-active");
         }    
-        if (currentScroll > (getSectionHeight() * 0.6)) {
+        if (currentScroll > (getSectionHeight() * 0.5)) {
             $('.education-panel-child:nth-child(2)').addClass("section-active");
         }
-        if (currentScroll > (getSectionHeight() * 0.7)) {
+        if (currentScroll > (getSectionHeight() * 0.6)) {
             $('.education-panel-child:nth-child(3)').addClass("section-active");
         }
-        if (currentScroll > (getSectionHeight() * 1.4)) {
+        if (currentScroll > (getSectionHeight() * 1.3)) {
         	console.log("d");
             $('.experience-panel-child:nth-child(1)').addClass("section-active");
         }
-        if (currentScroll > (getSectionHeight() * 1.55)) {
+        if (currentScroll > (getSectionHeight() * 1.45)) {
             $('.experience-panel-child:nth-child(2)').addClass("section-active");
         }
         if (currentScroll > (getSectionHeight() * 1.7)) {
