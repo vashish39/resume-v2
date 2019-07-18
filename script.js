@@ -136,8 +136,8 @@ $(window).bind("load resize scroll", function (e) {
     if (width < 768) {
     	var a = 0.3;
     	var b = 1.3;
-    	var c = 2.5;
-    	var d = 3.3;
+    	var c = 2.3;
+    	var d = 3;
     }
     else if (width > 768) {
     	var a = 0.3;
@@ -191,7 +191,7 @@ $(window).bind("load resize scroll", function (e) {
 		$('.nav-item').eq(3).addClass("nav-active");
 		$('.nav-item:not(:nth-child(4))').removeClass("nav-active");
 		$('.portfolio-content li').each(function(i) {
-			  $(this).css('animation', "fade-in-up .5s ease forwards");
+			  $(this).css('animation', "fade-in-up .5s ease 1s forwards");
 			  $(this).css('animation-delay', .2*i+"s");
 		});		
 //		$('.skillbar .skillbar-bar').css({"width":"0%", "transition":".1s linear"});
