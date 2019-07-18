@@ -355,8 +355,10 @@ $(document).ready(function(){
 });
 
 var setImageWidth = function(){
-	var bgWidth = $(".portfolio-content li").width();
-	var imgWidth = $(".portfolio-content img").width();
+	var bgWidth = $(".upper-row li").width();
+	var imgWidth = $(".upper-row img").width();
+	console.log("I"+imgWidth);
+
 	$('.blur, .caption-text').css({ "width": imgWidth});
 
 	$(".upper-row li").click(function(){
@@ -371,7 +373,7 @@ var setImageWidth = function(){
 	
 	if(bgWidth > imgWidth){
 		var margin = bgWidth - imgWidth;
-		$('.portfolio-content img').css({ "margin-left": (margin/2)});
+		$('.portfolio-content .row img').css({ "margin-left": (margin/2)});
 		$('.blur, .caption-text').css({ "margin-left": (margin/2)});
 	}
 }
@@ -384,5 +386,6 @@ function initialise() {
 	getWindowHeight();
 }
 
-$(document).ready(initialise);
+$(document).ready(setImageWidth());
+$(window).scroll(initialise);
 $(window).resize(initialise);
