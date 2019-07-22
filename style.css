@@ -530,6 +530,7 @@ body {
 .portfolio-panel {
 	margin-top: 20px;
 	opacity:0;
+	text-align: center;
     transition: all 0.2s ease;
     border-radius: 20px;
     padding: 20px;
@@ -639,7 +640,30 @@ body {
 	margin: 10px auto;
 }
 
+.portfolio-more{
+  padding: 5px 10px;
+  margin: 0 auto;
+  float: right;
+  background: #fdf5f4;
+  font-family: 'Quicksand', sans-serif;
+  color: #F9C23C;
+  border-radius: 2em;
+  border: 0.15em solid #F9C23C;
+  cursor: pointer;
+   text-align: center;
+  transition: all 0.3s ease 0s;	display: block;
+}
 
+
+.portfolio-more:hover {
+    color: #fff;
+    background-color: #EAA502;
+    border-color: #EAA502;
+    background-position: 0.75em bottom;
+    -webkit-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
 
 @keyframes backgroundcolor {
     0% {
