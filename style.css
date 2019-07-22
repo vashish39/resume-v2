@@ -616,8 +616,8 @@ body {
 }
 .portfolio-content .caption-text h1{
 	font-family: 'Roboto Slab', serif;
-	font-size: 18px;
 }
+
 .portfolio-content .caption-text{
 	z-index: 10;
 	color: #fff;
@@ -975,3 +975,14 @@ body {
   }
 }
 
+@media only screen and (min-width: 769px) {
+	.portfolio-content .caption-text h1{
+		font-size: 18px;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	.portfolio-content .caption-text h1{
+		font-size: 12px;
+	}
+}
