@@ -35,7 +35,7 @@ var getSectionHeight = function() {
 $(document).ready(function(){
 	$('.entry-blocks h1').css({"animation": "fade-inout 3s ease forwards .5s"});
 	$('.entry-blocks h1').delay(3500).hide(0);
-//    $('.info').hide(0).delay(3500).show(0);
+    $('.info').hide(0).delay(3500).show(0);
     $('.info').show(0);
     $('html').mousemove(function(e){
         var x = e.pageX - this.offsetLeft;
