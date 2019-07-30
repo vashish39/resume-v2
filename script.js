@@ -176,10 +176,10 @@ $(window).bind("load resize scroll", function (e) {
 			  $(this).css('animation', "fade-in-right .5s ease forwards");
 			  $(this).css('animation-delay', .1*i+"s");
 		});
-		$('.skillbar .skillbar-bar').eq(0).css({"width":"75%", "box-shadow": "0 0 2px 2px #F2B103", "transition":".5s ease-in .2s"});
-		$('.skillbar .skillbar-bar').eq(1).css({"width":"75%", "box-shadow": "0 0 2px 2px #F2B103", "transition":".5s ease-in .4s"});
-		$('.skillbar .skillbar-bar').eq(2).css({"width":"100%", "box-shadow": "0 0 2px 2px #F2B103", "transition":".5s ease-in .6s"});
-		$('.skillbar .skillbar-bar').eq(3).css({"width":"100%", "box-shadow": "0 0 2px 2px #F2B103", "transition":".5s ease-in .8s"});
+		$('.skillbar .skillbar-bar').eq(0).css({"width":"100%", "box-shadow": "0 0 2px 2px #F2B103", "transition":".5s ease-in .2s"});
+		$('.skillbar .skillbar-bar').eq(1).css({"width":"100%", "box-shadow": "0 0 2px 2px #F2B103", "transition":".5s ease-in .4s"});
+		$('.skillbar .skillbar-bar').eq(2).css({"width":"75%", "box-shadow": "0 0 2px 2px #F2B103", "transition":".5s ease-in .6s"});
+		$('.skillbar .skillbar-bar').eq(3).css({"width":"75%", "box-shadow": "0 0 2px 2px #F2B103", "transition":".5s ease-in .8s"});
 		$('.skillbar .skillbar-bar').eq(4).css({"width":"75%", "box-shadow": "0 0 2px 2px #F2B103", "transition":".5s ease-in 1s"});
 		$('.skillbar .skillbar-bar').eq(5).css({"width":"100%", "box-shadow": "0 0 2px 2px #F2B103", "transition":".5s ease-in 1.2s"});
 	}
